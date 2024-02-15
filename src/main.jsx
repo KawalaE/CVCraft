@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
+import Contact from './contact'
+import Education from './education'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {console.log("ss")}
+    <Education></Education>
   </React.StrictMode>,
 )
