@@ -61,8 +61,8 @@ img{
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: rgb(188, 211, 255);
-  border: 6px solid rgb(255, 255, 255);
+  /*background-color: rgb(188, 211, 255);*/
+  /*border: 6px solid rgb(255, 255, 255);*/
 }
 .add-picture{
   margin-top: 30px;
@@ -71,4 +71,8 @@ img{
 .add-picture:hover{
   scale: 105%;
   
+}
+dialog{
+  width: 400px;
+  height: 400px;
 }

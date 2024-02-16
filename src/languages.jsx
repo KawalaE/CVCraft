@@ -1,6 +1,5 @@
 import "./styles.css"
 import { useState } from "react"
-//A1, A2, B1, B2, C1, C2
 export default function Languages(){
     const [show, setHide] = useState(true);
     return (
