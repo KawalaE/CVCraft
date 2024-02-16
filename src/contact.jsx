@@ -29,8 +29,7 @@ export default function Contact(){
                     <input type="website" name="website" id="website" autoComplete="url" placeholder="www.reallygreatsite.com" />
                 </div>
             </form>
-            ) :null}
-            
+            ) :null}         
         </>
     )
 }

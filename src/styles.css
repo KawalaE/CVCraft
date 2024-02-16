@@ -3,6 +3,11 @@
     box-sizing: border-box;
     font-size: 16px;
   }
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .contactForm{
     display: flex;
     flex-direction: column;
@@ -14,10 +19,56 @@ input, select {
   font-size: 0.9rem;
   cursor: pointer;
 }
+textarea {
+  width: 300px;
+  height: 100px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
 .form-section{
   display: flex;
   flex-direction: column;
 }
 button{
   cursor: pointer;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.resume{
+  width: 670px;
+  height: 927px;
+  border: 1px solid black;;
+}
+.app{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.concise-side{
+  width: 35%;
+  height: 100%;
+  background-color:rgb(111, 111, 252);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgb(188, 211, 255);
+  border: 6px solid rgb(255, 255, 255);
+}
+.add-picture{
+  margin-top: 30px;
+  transition: 0.2s ease-in-out;
+}
+.add-picture:hover{
+  scale: 105%;
+  
 }
