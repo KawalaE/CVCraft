@@ -57,20 +57,31 @@ button{
   flex-direction: column;
   align-items: center;
 }
-img{
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  /*background-color: rgb(188, 211, 255);*/
-  /*border: 6px solid rgb(255, 255, 255);*/
-}
 .add-picture{
   margin-top: 30px;
   transition: 0.2s ease-in-out;
 }
-.add-picture:hover{
-  scale: 105%;
+.pen{
+  width: 40px;
+  height: 40px;
+  background-color: rgb(51, 51, 51);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+}
+.pen > img{
+  width:70%;
+  height: 70%;
   
+}
+.profile{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: grey;
+  border: 1px solid white;
 }
 dialog{
   width: 400px;

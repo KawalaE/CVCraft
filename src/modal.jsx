@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./styles.css"
-export default function UploadPicture(){
+
+export default function Modal(){
     const [data, setData] = useState();
 
     function handleChange(e){

@@ -1,14 +1,12 @@
 import './styles.css'
-import circleAdd from "./assets/add-circle.svg"
+import Profile from './profile'
+
 
 export default function Resume(){
     return (
         <div className="resume">
             <div className="concise-side">
-                <button className='add-picture'>
-                    <img src={circleAdd} alt="Circular add button"/>
-                </button>
-                
+                <Profile/>      
             </div>
             <div className="wide-side">
 
