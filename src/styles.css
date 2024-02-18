@@ -61,6 +61,22 @@ button{
   margin-top: 30px;
   transition: 0.2s ease-in-out;
 }
+.profile{
+  position: relative;
+}
+.profile:hover .pen{
+  display: flex;
+}
+.profile-pic{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.pen > img{
+  width:70%;
+  height: 70%;
+}
 .pen{
   width: 40px;
   height: 40px;
@@ -70,20 +86,25 @@ button{
   align-items: center;
   justify-content: center;
   border: 1px solid white;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: all 50ms ease-in-out;
 }
-.pen > img{
-  width:70%;
-  height: 70%;
-  
+.pen:active{
+  scale:90%
 }
-.profile{
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: grey;
-  border: 1px solid white;
-}
-dialog{
-  width: 400px;
-  height: 400px;
+.modal{
+  background-color: rgb(85, 85, 85);
+  max-width: 400px;
+  max-height: 600px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
 }

@@ -1,5 +1,5 @@
 import './styles.css'
-import Profile from './profile'
+import Profile from './Profile'
 
 
 export default function Resume(){
@@ -13,4 +13,4 @@ export default function Resume(){
             </div>
         </div>
     )
-}
+} 
