@@ -7,6 +7,7 @@ body{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: #f0f0f0;
 }
 .contactForm{
     display: flex;
@@ -98,11 +99,12 @@ button{
   scale:90%
 }
 .modal{
-  background-color: rgb(85, 85, 85);
+  background-color: #f0f0f0;
+  border: 3px solid rgb(158, 158, 158);
   border-radius: 25px;
   max-width: 400px;
   max-height: 600px;
-  padding: 30px;
+  padding: 20px;
   position: fixed;
   left: 0;
   right: 0;
@@ -110,4 +112,13 @@ button{
   bottom: 0;
   margin: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.close-modal{
+    background:url('./assets/x.svg');
+    background-size: 40px 40px;
+    height: 40px;  
+    width: 40px;
+    margin-left: auto;
 }

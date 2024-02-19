@@ -5,7 +5,7 @@ export default function Modal({ updateAvatar, closeModal}){
     return (
         <>
             <div className="modal">
-                <button onClick={closeModal}>Close</button>
+                <button className={"close-modal"} onClick={closeModal}></button>
                <ImageCroper 
                     updateAvatar={updateAvatar}
                     closeModal={closeModal}/>
