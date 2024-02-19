@@ -9,7 +9,7 @@ import setCanvasPreview from "./setCanvasPreview";
 const MIN_DIMENSION = 150;
 const ASPECT_RATIO = 1;
 
-export default function ImageCroper({ updateAvatar }){
+export default function ImageCroper({ updateAvatar, closeModal }){
     const imgRef = useRef(null);
     const previewCanvasRef = useRef(null);
     const [data, setData] = useState();
@@ -78,6 +78,7 @@ export default function ImageCroper({ updateAvatar }){
                         );
                         const dataURL = previewCanvasRef.current.toDataURL();
                         updateAvatar(dataURL);
+                        closeModal();
                     }}>Crop Imge</button>  
                 </>
             )}
@@ -86,6 +87,7 @@ export default function ImageCroper({ updateAvatar }){
                     ref={previewCanvasRef}
                     className="mt-4"
                     style={{
+                        display:"none",
                         border:"1px solid black",
                         objectFit:"contain",
                         width:150,

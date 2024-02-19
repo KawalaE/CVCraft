@@ -98,8 +98,10 @@ button{
 }
 .modal{
   background-color: rgb(85, 85, 85);
+  border-radius: 25px;
   max-width: 400px;
   max-height: 600px;
+  padding: 30px;
   position: fixed;
   left: 0;
   right: 0;

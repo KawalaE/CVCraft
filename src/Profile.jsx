@@ -17,7 +17,10 @@ export default function Profile(){
             <button onClick={()=>setOpenModal(true)} className="pen">
                 <img src={Pen} alt="" />
             </button>
-            {openModal && <Modal updateAvatar={updateAvatar}/>}
+            {openModal && (<Modal 
+                updateAvatar={updateAvatar}
+                closeModal={()=>setOpenModal(false)}
+            />)}
         </div>
         
         </>

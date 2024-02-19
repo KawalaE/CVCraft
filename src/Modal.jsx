@@ -1,12 +1,15 @@
 import "./styles.css"
 import ImageCroper from "./ImageCropper"
 
-export default function Modal({ updateAvatar }){    
+export default function Modal({ updateAvatar, closeModal}){    
     return (
         <>
-            <dialog open className="modal">
-               <ImageCroper updateAvatar={updateAvatar}/>
-            </dialog> 
+            <div className="modal">
+                <button onClick={closeModal}>Close</button>
+               <ImageCroper 
+                    updateAvatar={updateAvatar}
+                    closeModal={closeModal}/>
+            </div> 
         </>
     )
 }
