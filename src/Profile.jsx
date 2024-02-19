@@ -4,7 +4,7 @@ import { useState, useRef } from "react"
 import Modal from "./Modal";
 
 export default function Profile(){
-    const avatarURL = useRef("https://avatarfiles.alphacoders.com/161/161002.jpg");
+    const avatarURL = useRef("https://cdn-icons-png.flaticon.com/512/147/147285.png");
     const [openModal, setOpenModal] = useState(false);
     
     const updateAvatar = (imgSrc) => {

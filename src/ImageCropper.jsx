@@ -6,7 +6,7 @@ import ReactCrop, { centerCrop, convertToPixelCrop, makeAspectCrop }  from 'reac
 import setCanvasPreview from "./setCanvasPreview";
 
 
-const MIN_DIMENSION = 150;
+const MIN_DIMENSION = 175;
 const ASPECT_RATIO = 1;
 
 export default function ImageCroper({ updateAvatar, closeModal }){
@@ -53,7 +53,7 @@ export default function ImageCroper({ updateAvatar, closeModal }){
     }
     return (
         <>
-            <input id="image" type="file" accept="image/jpeg, image/png" onChange={handleChange}/>
+            <input id="image" type="file" accept="image/png, image/gif, image/jpeg" onChange={handleChange}/>
             {error && <p>{error}</p>}
             {data && ( 
                 <>
