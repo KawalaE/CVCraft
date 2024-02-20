@@ -1,14 +1,18 @@
 import "./styles.css"
 import ImageCroper from "./ImageCropper"
+import ReactDom from 'react-dom'
 
 export default function Modal({ updateAvatar, closeModal}){    
-    return (
+    return ReactDom.createPortal(
         <>
-            <div className="modal">
-               <ImageCroper 
-                    updateAvatar={updateAvatar}
-                    closeModal={closeModal}/>
-            </div> 
-        </>
+            <div className="overlay">
+                <div className="modal">
+                <ImageCroper 
+                        updateAvatar={updateAvatar}
+                        closeModal={closeModal}/>
+                </div> 
+            </div>
+        </>,
+        document.getElementById('portal')
     )
 }

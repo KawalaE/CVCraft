@@ -70,7 +70,7 @@ export default function ImageCroper({ updateAvatar, closeModal }){
                         aspect={ASPECT_RATIO}
                         minWidth={MIN_DIMENSION}>
                         <img ref={imgRef} src={data} onLoad={onImageLoad} alt="Upload" style={{maxWidth:"100%"}}></img>
-                    </ReactCrop>  
+                    </ReactCrop>
                     <button className="crop-btn" onClick={() => {
                         setCanvasPreview(
                             imgRef.current,
