@@ -65,15 +65,16 @@ button{
 .profile{
   position: relative;
 }
-.profile:hover .pen{
-  display: flex;
-}
 .profile-pic{
   width: 175px;
   height: 175px;
   border-radius: 50%;
   border: 5px solid white;
   margin-top: 20px;
+}
+.profile:hover .pen{
+  display: flex;
+  
 }
 .pen > img{
   width:70%;
@@ -93,10 +94,9 @@ button{
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
-  transition: all 50ms ease-in-out;
 }
-.pen:active{
-  scale:90%
+.pen:hover{
+  background-color:  #10b981;
 }
 .modal{
   background-color: #ffffff;
@@ -131,13 +131,20 @@ button{
     height: 30px;  
     width: 30px;
     margin-left: auto;
+    transition: all 100ms ease-in-out;
+}
+.close-modal:hover{
+  scale: 110%
+}
+.close-modal:active{
+  scale: 95%;
 }
 #image{
   padding: 5px;
 }
-.crop-btn{
+.crop-btn, .file-loader-btn{
   padding: 0.5em 1em;
-  width: 100px;
+  width: auto;
   border-radius: 5px;
   font-size: 0.875rem;
   background: #10b981;
@@ -146,10 +153,21 @@ button{
   color: #fff;
   font-weight: 500;
   cursor: pointer;
-
+  font-weight: 700;
+  transition: all 100ms ease-in-out;
+}
+.crop-btn:hover, .file-loader-btn:hover{
+  background: #0d996a;
 }
 .loaded-img{
   width: auto; /* or any custom size */
   height: 100%; 
   object-fit: contain;
+}
+
+input[type="file"] {
+  display: none;
+}
+.error-msg{
+  color: rgb(211, 50, 50);
 }

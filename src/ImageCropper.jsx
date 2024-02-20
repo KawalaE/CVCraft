@@ -28,7 +28,7 @@ export default function ImageCroper({ updateAvatar, closeModal }){
                 if(error) setError('');
                 const {naturalWidth, naturalHeight } = e.currentTarget;
                 if(naturalWidth < MIN_DIMENSION || naturalHeight < MIN_DIMENSION){
-                    setError("Minimal resolution is 150 x 150 px.");
+                    setError("Wrong size: Minimal resolution is 150px by 150px.");
                     return setData();
                 }
             })
@@ -54,10 +54,12 @@ export default function ImageCroper({ updateAvatar, closeModal }){
     return (
         <>
             <div className="modal-top">
-                <input id="image" type="file" accept="image/png, image/gif, image/jpeg" onChange={handleChange}/>
+                <label htmlFor="image" className="file-loader-btn">Choose file
+                    <input id="image" type="file" accept="image/png, image/gif, image/jpeg" onChange={handleChange}/>
+                </label>
                 <button className={"close-modal"} onClick={closeModal}></button>
             </div>
-            {error && <p>{error}</p>}
+            {error && <p className="error-msg">{error}</p>}
             {data && ( 
                 <>
                     <ReactCrop 
