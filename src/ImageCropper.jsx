@@ -53,7 +53,10 @@ export default function ImageCroper({ updateAvatar, closeModal }){
     }
     return (
         <>
-            <input id="image" type="file" accept="image/png, image/gif, image/jpeg" onChange={handleChange}/>
+            <div className="modal-top">
+                <input id="image" type="file" accept="image/png, image/gif, image/jpeg" onChange={handleChange}/>
+                <button className={"close-modal"} onClick={closeModal}></button>
+            </div>
             {error && <p>{error}</p>}
             {data && ( 
                 <>
@@ -64,9 +67,9 @@ export default function ImageCroper({ updateAvatar, closeModal }){
                         keepSelection
                         aspect={ASPECT_RATIO}
                         minWidth={MIN_DIMENSION}>
-                        <img ref={imgRef} src={data} onLoad={onImageLoad} alt="Upload" style={{maxHeight:"70vh"}}></img>
+                        <img ref={imgRef} src={data} onLoad={onImageLoad} alt="Upload" style={{maxWidth:"100%"}}></img>
                     </ReactCrop>  
-                    <button onClick={() => {
+                    <button className="crop-btn" onClick={() => {
                         setCanvasPreview(
                             imgRef.current,
                             previewCanvasRef.current,

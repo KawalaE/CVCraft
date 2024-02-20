@@ -2,7 +2,7 @@ import "./styles.css"
 import { useState } from "react"
 
 export default function Education(){
-    const [show, setHide] = useState(true);
+    const [show, setHide] = useState(false);
     return (
         <>
             <h1>Education</h1>

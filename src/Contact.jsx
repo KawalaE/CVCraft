@@ -2,7 +2,7 @@ import "./styles.css"
 import { useState } from "react"
 
 export default function Contact(){
-    const [show, setHide] = useState(true);
+    const [show, setHide] = useState(false);
     return (
         <>  <h1>Personal information</h1>
             <button onClick={() =>show ? setHide(false) : setHide(true)}>{show ? "Hide": "Show"}</button>

@@ -7,7 +7,7 @@ body{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: #fffff6;
 }
 .contactForm{
     display: flex;
@@ -99,26 +99,57 @@ button{
   scale:90%
 }
 .modal{
-  background-color: #f0f0f0;
-  border: 3px solid rgb(158, 158, 158);
-  border-radius: 25px;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
   max-width: 400px;
-  max-height: 600px;
+  /*max-height: 650px;*/
+  max-height: fit-content;
   padding: 20px;
+  
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
-  text-align: center;
+  
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.modal-top{
+  display: flex;
+  width: 100%;
 }
 .close-modal{
     background:url('./assets/x.svg');
-    background-size: 40px 40px;
-    height: 40px;  
-    width: 40px;
+    background-size: 30px 30px;
+    height: 30px;  
+    width: 30px;
     margin-left: auto;
+}
+#image{
+  padding: 5px;
+}
+.crop-btn{
+  padding: 0.5em 1em;
+  width: 100px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  background: #10b981;
+  top: 1em;
+  right: 1em;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+.loaded-img{
+  width: auto; /* or any custom size */
+  height: 100%; 
+  object-fit: contain;
 }
