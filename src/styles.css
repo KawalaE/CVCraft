@@ -8,11 +8,12 @@ body{
   height: 100vh;
   overflow: hidden;
   background-color: #f0f0f0;
+  color: rgb(88, 87, 87);
 }
 .contactForm{
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 input, select {
   width: 300px;
@@ -44,10 +45,7 @@ textarea {
   border-radius: 5px;
 
 }
-.form-section{
-  display: flex;
-  flex-direction: column;
-}
+
 button{
   cursor: pointer;
   background: none;
@@ -196,4 +194,48 @@ input[type="file"] {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
+}
+.form-label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:auto;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0px 5px 0px 5px;
+}
+.hide{
+  background:url('./assets/up-arrow.svg');
+  background-size: 35px 35px;
+  height: 35px;  
+  width: 35px;
+}
+.show{
+  background:url('./assets/down-arrow.svg');
+  background-size: 35px 35px;
+  height: 35px;  
+  width: 35px;
+}
+.left-side{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.hide:hover, .show:hover{
+  filter: brightness(75%);
+}
+.form-section{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 5px 10px 5px 10px;
+  border-radius: 0.75rem;
+  padding: 10px 10px 10px 10px;
+}
+.form-segment{
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 7px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  min-width: 300px;
 }
