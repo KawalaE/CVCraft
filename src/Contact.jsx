@@ -7,7 +7,10 @@ export default function Contact(){
         <>  
         <div className="form-segment">
             <div className="form-label">
-                    <h1>Personal information</h1>
+                    <div className="form-title">
+                        <p className="form-icon-contact"></p>
+                        <h1>Personal information</h1>
+                    </div>
                     <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
                 </div>   
                 {show ? (

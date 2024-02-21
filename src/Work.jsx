@@ -5,9 +5,12 @@ export default function Work(){
         <>
         <div className="form-segment">
             <div className="form-label">
-                    <h1>Work experiance</h1>
-                    <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
+                <div className="form-title">
+                    <p className="form-icon-briefcase"></p>
+                    <h1>Work experience</h1>
                 </div>
+                <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
+            </div>
                 
                 {show ? (
                     <form className="contactForm">

@@ -7,8 +7,11 @@ export default function Languages(){
         <>  
             <div className="form-segment">
                 <div className="form-label">
+                    <div className="form-title">
+                        <p className="form-icon-speech"></p>
                         <h1>Languages</h1>
-                        <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
+                    </div>
+                    <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
                     </div>
                     {show ? (
                         <form className="contactForm">

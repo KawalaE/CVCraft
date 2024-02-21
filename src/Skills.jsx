@@ -7,7 +7,10 @@ export default function Skills(){
         <>  
             <div className="form-segment">
                 <div className="form-label">
+                    <div className="form-title">
+                        <p className="form-icon-skills"></p>
                         <h1>Skills</h1>
+                    </div>
                         <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
                     </div>
                     {show ? (
