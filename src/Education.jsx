@@ -14,7 +14,7 @@ export default function Education(){
                     <button className={show ? "hide" : "show"}  onClick={() =>show ? setHide(false) : setHide(true)}></button>
                 </div>
                 {show ? (
-                    <form className="contactForm">
+                    <form style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                     <div className="form-section">
                         <label htmlFor="startDate">Start date</label>
                         <input type="date" name="date" id="startDate"/>

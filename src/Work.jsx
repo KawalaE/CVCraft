@@ -1,6 +1,6 @@
 import { useState } from "react";
 export default function Work(){
-    const [show, setHide] = useState(true);
+    const [show, setHide] = useState(false);
     return (
         <>
         <div className="form-segment">
@@ -13,7 +13,7 @@ export default function Work(){
             </div>
                 
                 {show ? (
-                    <form className="contactForm">
+                    <form style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                     <div className="form-section">
                         <label htmlFor="startDate">Start date</label>
                         <input type="date" name="date" id="startDate"/>

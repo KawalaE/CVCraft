@@ -14,7 +14,7 @@ export default function Languages(){
                     <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
                     </div>
                     {show ? (
-                        <form className="contactForm">
+                        <form style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                         <div className="form-section">
                             <label htmlFor="language">Language</label>
                             <input type="text" name="language" id="language" placeholder="English" />

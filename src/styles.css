@@ -274,3 +274,16 @@ input[type="file"] {
   align-items: center;
   gap: 10px;
 }
+.slide-down{
+  animation: slide-down 600ms forwards;
+}
+
+
+@keyframes slide-down{
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
