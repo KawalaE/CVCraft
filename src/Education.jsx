@@ -31,6 +31,7 @@ export default function Education(){
                         <label htmlFor="uniTitle">Degree</label>
                         <input type="name" name="name" id="uniTitle" placeholder="Master's Degree in Math"/>
                     </div>
+                    <button className="add-btn">Add</button>
                 </form>
                 ) : null}
            </div>

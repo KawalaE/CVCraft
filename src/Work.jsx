@@ -35,6 +35,7 @@ export default function Work(){
                         <textarea name="position-description" id="" cols="10" rows="5"  maxLength="300" placeholder="Information about your responsibilities ...">
                         </textarea>
                     </div>
+                    <button className="add-btn">Add</button>
                 </form>
                 ) : null}
             </div>

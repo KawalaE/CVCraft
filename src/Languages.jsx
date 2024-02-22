@@ -30,6 +30,7 @@ export default function Languages(){
                                 <option value="c2">C2 (Proficient)</option>
                             </select>
                         </div>
+                        <button className="add-btn">Add</button>
                     </form>
                     ) :null}
             </div>

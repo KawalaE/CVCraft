@@ -19,7 +19,7 @@ export default function Skills(){
                             <label htmlFor="skill">Add a skill</label>
                             <input type="text" name="skill" id="skill" placeholder="JavaScript" />
                         </div>
-                        
+                        <button className="add-btn">Add</button>
                     </form>
                     ) :null}
             </div>

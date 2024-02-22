@@ -1,8 +1,8 @@
 import "./styles.css"
 import { useState } from "react"
 
-export default function Contact(){
-    const [show, setHide] = useState(false);
+export default function Contact({inputChange}){
+    const [show, setHide] = useState(true);
     return (
         <>  
         <div className="form-segment">
@@ -17,11 +17,11 @@ export default function Contact(){
                     <form style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                         <div className="form-section">
                             <label htmlFor="name">Full name</label>
-                            <input type="text" name="name" id="name" autoComplete ="cc-name" placeholder="Richard Sanchez" />
+                            <input onChange={inputChange} maxLength={30} type="text" name="name" id="name" autoComplete ="cc-name" placeholder="Richard Sanchez" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="position">Current position</label>
-                            <input type="text" name="position" id="position" placeholder="Marketing Manager" />
+                            <input onChange={inputChange} type="text" name="position" id="position" placeholder="Marketing Manager" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="phone">Phone number</label>
@@ -35,9 +35,12 @@ export default function Contact(){
                             <label htmlFor="website">Personal site</label>
                             <input type="website" name="website" id="website" autoComplete="url" placeholder="www.reallygreatsite.com" />
                         </div>
+                        <button className="add-btn">Add</button>
                 </form>
-                ) :null}   
+                ) :null}
+               
         </div>
         </>
     )
 }
+

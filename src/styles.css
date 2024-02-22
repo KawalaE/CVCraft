@@ -8,11 +8,12 @@ body{
   height: 100vh;
   overflow: hidden;
   background-color: #f0f0f0;
-  color: rgb(88, 87, 87);
+  color: rgb(73, 73, 73);
 }
 .contactForm{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
 }
 input, select {
@@ -23,7 +24,8 @@ input, select {
   border: 1px solid #c0c4c9;
   background: #f9fafb;
   border-radius: 5px;
-  padding: 10px
+  padding: 10px;
+  border-bottom: 2px solid #c0c4c9;
 }
 input:focus, select:focus, textarea:focus{
   outline: none !important;
@@ -43,7 +45,7 @@ textarea {
   box-shadow: none;
   border: 1px solid #c0c4c9;
   border-radius: 5px;
-
+  resize:none;
 }
 
 button{
@@ -59,20 +61,13 @@ button{
 .resume{
   width: 670px;
   height: 927px;
-  border: 1px solid black;;
+  border: 1px solid black;
+  background-color: #ffffff ;
 }
 .app{
   display: flex;
   justify-content: center;
   gap: 100px;
-}
-.concise-side{
-  width: 35%;
-  height: 100%;
-  background-color:rgb(46, 83, 117);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .add-picture{
   margin-top: 30px;
@@ -80,13 +75,16 @@ button{
 }
 .profile{
   position: relative;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .profile-pic{
   width: 175px;
   height: 175px;
   border-radius: 50%;
-  border: 5px solid white;
-  margin-top: 20px;
+  border: 5px solid #10b981;
 }
 .profile:hover .pen{
   display: flex;
@@ -158,7 +156,7 @@ button{
 #image{
   padding: 5px;
 }
-.crop-btn, .file-loader-btn{
+.crop-btn, .file-loader-btn, .add-btn{
   padding: 0.5em 1em;
   width: auto;
   border-radius: 5px;
@@ -172,7 +170,7 @@ button{
   font-weight: 700;
   transition: all 100ms ease-in-out;
 }
-.crop-btn:hover, .file-loader-btn:hover{
+.crop-btn:hover, .file-loader-btn:hover, .add-btn:hover{
   background: #0d996a;
 }
 .loaded-img{
@@ -277,13 +275,43 @@ input[type="file"] {
 .slide-down{
   animation: slide-down 600ms forwards;
 }
-
+.add-btn{
+  width: fit-content;
+  margin: 5px 0px 5px 0px;
+}
 
 @keyframes slide-down{
   0% {
-    transform: translateY(-10%);
+    transform: translateY(-5%);
   }
   100% {
     transform: translateY(0%);
   }
+}
+.upper-part{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.upper-full-name{
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+.upper-current-position{
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color:#0d996a;
+  color:white;
+  padding: 5px 15px 5px 15px;
+  border-radius: 15px;
+}
+.upper-info{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
 }
