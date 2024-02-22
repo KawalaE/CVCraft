@@ -21,21 +21,28 @@ export default function Contact({inputChange}){
                         </div>
                         <div className="form-section">
                             <label htmlFor="position">Current position</label>
-                            <input onChange={inputChange} type="text" name="position" id="position" placeholder="Marketing Manager" />
+                            <input onChange={inputChange} maxLength={40} type="text" name="position" id="position" placeholder="Marketing Manager" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="phone">Phone number</label>
-                            <input type="text" name="phone" id="phone" autoComplete ="tel" placeholder="+123-456-7890" />
+                            <input onChange={inputChange}  type="text" name="phone" id="phone" autoComplete ="tel" placeholder="+123-456-7890" />
                         </div>
                         <div className="form-section">
                             <label htmlFor="email">Email</label>
-                            <input type="email" name="email" id="email" autoComplete="email" placeholder="hello@reallygreatsite.com" />
+                            <input onChange={inputChange}  type="email" name="email" id="email" autoComplete="email" placeholder="hello@reallygreatsite.com" />
                         </div>
                         <div className="form-section">
-                            <label htmlFor="website">Personal site</label>
-                            <input type="website" name="website" id="website" autoComplete="url" placeholder="www.reallygreatsite.com" />
+                            <label htmlFor="github">Github</label>
+                            <input onChange={inputChange} type="github" name="github" id="github" autoComplete="url" placeholder="www.reallygreatsite.com" />
                         </div>
-                        <button className="add-btn">Add</button>
+                        <div className="form-section">
+                            <label htmlFor="linkedin">Linkedin</label>
+                            <input onChange={inputChange} type="linkedin" name="linkedin" id="linkedin" autoComplete="url" placeholder="www.reallygreatsite.com" />
+                        </div>
+                        <div className="form-section">
+                            <label htmlFor="website">Personal site / Portfolio</label>
+                            <input onChange={inputChange} type="website" name="website" id="website" autoComplete="url" placeholder="www.reallygreatsite.com" />
+                        </div>
                 </form>
                 ) :null}
                

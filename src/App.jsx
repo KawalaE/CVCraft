@@ -14,13 +14,27 @@ export default function App(){
             setFullName(e.target.value);
         } else if(e.target.id === "position"){
             setPosition(e.target.value);
-        }
-        
+        } else if(e.target.id === "phone"){
+            setphoneNumber(e.target.value);
+        } else if(e.target.id === "email"){
+            setEmail(e.target.value);
+        }else if(e.target.id === "github"){
+            setGithubWeb(e.target.value);
+        }else if(e.target.id === "linkedin"){
+            setLinkedinWeb(e.target.value);
+        }else if(e.target.id === "website"){
+            setPortfolio(e.target.value);
+        } 
     } 
 
-    const [fullName, setFullName] = useState("");
-    const [position, setPosition] = useState("");
-    const props = {fullName, position};
+    const [fullName, setFullName] = useState("Richard Sanchez");
+    const [position, setPosition] = useState("Marketing Manager");
+    const [phoneNumber, setphoneNumber] = useState("+123-456-7890");
+    const [email, setEmail] = useState("hello@reallygreatsite.com");
+    const [githubWeb, setGithubWeb] = useState("hello@reallygreatsite.com");
+    const [linkedinWeb, setLinkedinWeb] = useState("hello@reallygreatsite.com");
+    const [portfolio, setPortfolio] = useState("hello@reallygreatsite.com");
+    const props = {fullName, position, phoneNumber, email, githubWeb, linkedinWeb, portfolio};
 
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (

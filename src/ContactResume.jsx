@@ -3,10 +3,12 @@ import { useState } from "react"
 export default function ContactResume({props}){
     return(
         <>
-            <div className='upper-info'>
-                <p className='upper-full-name'>{props.fullName === "" ? "Richard Sanchez": props.fullName}</p>
-                <p className='upper-current-position'>{props.position=== "" ? "Marketing Manager": props.position}</p>
-            </div>
+            <p className="contact-info">Contact</p>
+            <p>{props.phoneNumber}</p>
+            <p>{props.email}</p>
+            <p>{props.githubWeb}</p>
+            <p>{props.linkedinWeb}</p>
+            <p>{props.portfolio}</p>
         </>
     )
 }
