@@ -28,29 +28,45 @@ export default function Contact({props, inputChange, visibilityChange}){
                             <label htmlFor="position">Current position</label>
                             <div className="input-entity">
                                 <input onChange={inputChange} maxLength={40} type="text" name="position" id="position" placeholder="Marketing Manager" />
-                                <button id="position" onClick={visibilityChange} className={props.position.positionVisibility ? "open-eye-icon" : "closed-eye-icon"}type="button"></button>
+                                <button id="position" onClick={visibilityChange} className={props.position.positionVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
                             </div>
                             
                         </div>
                         <div className="form-section">
                             <label htmlFor="phone">Phone number</label>
-                            <input onChange={inputChange}  type="text" name="phone" id="phone" autoComplete ="tel" placeholder="+123-456-7890" />
+                            <div className="input-entity">
+                                <input onChange={inputChange}  type="text" name="phone" id="phone" autoComplete ="tel" placeholder="+123-456-7890" />
+                                <button id="phone" onClick={visibilityChange} className={props.phone.phoneVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
+                            </div>
                         </div>
                         <div className="form-section">
                             <label htmlFor="email">Email</label>
-                            <input onChange={inputChange}  type="email" name="email" id="email" autoComplete="email" placeholder="hello@reallygreatsite.com" />
+                            <div className="input-entity">
+                                <input onChange={inputChange}  type="email" name="email" id="email" autoComplete="email" placeholder="hello@reallygreatsite.com" />
+                                <button id="email" onClick={visibilityChange} className={props.email.emailVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
+                            </div>
                         </div>
                         <div className="form-section">
                             <label htmlFor="github">Github</label>
-                            <input onChange={inputChange} type="github" name="github" id="github" autoComplete="url" placeholder="github.com/YourRepo" />
+                            <div className="input-entity">
+                                <input onChange={inputChange} type="github" name="github" id="github" autoComplete="url" placeholder="github.com/YourRepo" />
+                                <button id="github" onClick={visibilityChange} className={props.github.githubVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
+                            </div>
                         </div>
                         <div className="form-section">
                             <label htmlFor="linkedin">Linkedin</label>
-                            <input onChange={inputChange} type="linkedin" name="linkedin" id="linkedin" autoComplete="url" placeholder="linkedin.com/in/your-profile/" />
+                            <div className="input-entity">
+                                <input onChange={inputChange} type="linkedin" name="linkedin" id="linkedin" autoComplete="url" placeholder="linkedin.com/in/your-profile/" />
+                                <button id="linkedin" onClick={visibilityChange} className={props.linkedin.linkedinVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
+                            </div>
                         </div>
+                            
                         <div className="form-section">
                             <label htmlFor="website">Personal site / Portfolio</label>
-                            <input onChange={inputChange} type="website" name="website" id="website" autoComplete="url" placeholder="www.reallygreatsite.com" />
+                            <div className="input-entity">
+                                <input onChange={inputChange} type="website" name="website" id="website" autoComplete="url" placeholder="www.reallygreatsite.com" />
+                                <button id="website" onClick={visibilityChange} className={props.portfolio.portfolioVisibility? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
+                            </div>
                         </div>
                 </form>
                 ) :null}

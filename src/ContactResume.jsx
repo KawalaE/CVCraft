@@ -5,27 +5,26 @@ export default function ContactResume({props}){
         <div className="contact-box">
             <p className="contact-info">Contact</p>
             <div className="contact-inside">
-                <div className="contact-element">
+                {props.phone.phoneVisibility && <div className="contact-element">
                     <p className="phone-icon"></p>
-                    <p>{props.phoneNumber}</p>
-                </div>
-                <div className="contact-element">
+                    <p>{props.phone.phoneNumber}</p>
+                </div>}
+                {props.email.emailVisibility && <div className="contact-element">
                     <p className="email-icon"></p>
-                    <p>{props.email}</p>
-                </div>
-                <div className="contact-element">
+                    <p>{props.email.email}</p>
+                </div>}
+                {props.github.githubVisibility && <div className="contact-element">
                     <p className="github-icon"></p>
-                    <p>{props.githubWeb}</p>
-                </div>
-                <div className="contact-element">
+                    <p>{props.github.github}</p>
+                </div>}
+                {props.linkedin.linkedinVisibility && <div className="contact-element">
                     <p className="linkedin-icon"></p>
-                    <p>{props.linkedinWeb}</p>
-                </div>
-                <div className="contact-element">
+                    <p>{props.linkedin.linkedin}</p>
+                </div>}
+                {props.portfolio.portfolioVisibility && <div className="contact-element">
                     <p className="portfolio-icon"></p>
-                    <p>{props.portfolio}</p>
-                </div>
-                
+                    <p>{props.portfolio.portfolio}</p>
+                </div>}
             </div>
             
         </div>

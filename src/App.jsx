@@ -19,9 +19,9 @@ export default function App(){
         } else if(e.target.id === "email"){
             setEmail(e.target.value);
         }else if(e.target.id === "github"){
-            setGithubWeb(e.target.value);
+            setGithub(e.target.value);
         }else if(e.target.id === "linkedin"){
-            setLinkedinWeb(e.target.value);
+            setLinkedin(e.target.value);
         }else if(e.target.id === "website"){
             setPortfolio(e.target.value);
         } 
@@ -31,6 +31,16 @@ export default function App(){
             setNameVisibility(nameVisibility ? false : true);
         }else if(e.target.id === "position"){
             setPositionVisibility(positionVisibility ? false : true);
+        }else if(e.target.id === "phone"){
+            setPhoneVisibility(phoneVisibility ? false : true);
+        }else if(e.target.id === "email"){
+            setEmailVisibility(emailVisibility ? false : true);
+        }else if(e.target.id === "github"){
+            setGithubVisibility(githubVisibility ? false : true);
+        }else if(e.target.id === "linkedin"){
+            setLinkedinVisibility(linkedinVisibility ? false : true);
+        }else if(e.target.id === "website"){
+            setPortfolioVisibility(portfolioVisibility ? false : true);
         }
     }
 
@@ -39,11 +49,23 @@ export default function App(){
     const [position, setPosition] = useState("Marketing Manager");
     const [positionVisibility, setPositionVisibility] = useState(true);
     const [phoneNumber, setphoneNumber] = useState("+123-456-7890");
+    const [phoneVisibility, setPhoneVisibility] = useState(true);
     const [email, setEmail] = useState("hello@reallygreatsite.com");
-    const [githubWeb, setGithubWeb] = useState("https://github.com/YourRepo");
-    const [linkedinWeb, setLinkedinWeb] = useState("https://www.linkedin.com/in/your-profile/");
+    const [emailVisibility, setEmailVisibility] = useState(true);
+    const [github, setGithub] = useState("https://github.com/YourRepo");
+    const [githubVisibility, setGithubVisibility] = useState(true);
+    const [linkedin, setLinkedin] = useState("https://www.linkedin.com/in/your-profile/");
+    const [linkedinVisibility, setLinkedinVisibility] = useState(true);
     const [portfolio, setPortfolio] = useState("www.reallygreatsite.com");
-    const props = {name: {fullName, nameVisibility}, position:{position, positionVisibility}, phoneNumber, email, githubWeb, linkedinWeb, portfolio};
+    const [portfolioVisibility, setPortfolioVisibility] = useState(true);
+    const props = {
+        name: {fullName, nameVisibility}, 
+        position:{position, positionVisibility}, 
+        phone:{phoneNumber, phoneVisibility}, 
+        email:{email, emailVisibility }, 
+        github:{github, githubVisibility}, 
+        linkedin:{linkedin,linkedinVisibility}, 
+        portfolio:{portfolio, portfolioVisibility}};
 
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
