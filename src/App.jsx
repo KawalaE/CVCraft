@@ -24,7 +24,15 @@ export default function App(){
             setLinkedin(e.target.value);
         }else if(e.target.id === "website"){
             setPortfolio(e.target.value);
-        } 
+        }else if(e.target.id === "uniTitle"){
+            setUniTitle(e.target.value);
+        }else if(e.target.id === "uniName"){
+            setUniName(e.target.value);
+        }else if(e.target.id === "startUniDate"){
+            setStartUniDate(e.target.value);
+        }else if(e.target.id === "endUniDate"){
+            setEndUniDate(e.target.value);
+        }
     } 
     function  visibilityHandler(e){
         if(e.target.id === "name"){
@@ -41,7 +49,7 @@ export default function App(){
             setLinkedinVisibility(linkedinVisibility ? false : true);
         }else if(e.target.id === "website"){
             setPortfolioVisibility(portfolioVisibility ? false : true);
-        }
+        } 
     }
 
     const [fullName, setFullName] = useState("Richard Sanchez");
@@ -67,18 +75,33 @@ export default function App(){
         linkedin:{linkedin,linkedinVisibility}, 
         portfolio:{portfolio, portfolioVisibility}};
 
+    const [uniTitle, setUniTitle] = useState("Master's Degree in Math");
+    const [uniName, setUniName] = useState("Wardiere university");
+    const [startUniDate, setStartUniDate] = useState("12-12-2024");
+    const [endUniDate, setEndUniDate] = useState("12-12-2024");
+    const [stillStudying, setStillStudying] = useState(false);
+    
+    function checkboxHandler(){
+        console.log(stillStudying)
+        setStillStudying(stillStudying ? false : true);
+        console.log(stillStudying)
+    }
+
+    const education = {education: {
+        uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate
+    }};
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
         <div className="app">
             <div className="left-side">
                 <Contact props={props} inputChange={handleChange} visibilityChange={visibilityHandler}/>
-                <Education/>
+                <Education education={education} inputChange={handleChange} checkboxHandler={checkboxHandler}/>
                 <Skills/>
                 <Languages/>
                 <Work/>
             </div>
             <div ref={targetRef} className="right-side">
-                <Resume props={props}/>
+                <Resume props={props} education={education}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             

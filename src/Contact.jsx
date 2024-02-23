@@ -2,7 +2,7 @@ import "./styles.css"
 import { useState } from "react"
 
 export default function Contact({props, inputChange, visibilityChange}){
-    const [show, setHide] = useState(true);
+    const [show, setHide] = useState(false);
     return (
         <>  
         <div className="form-segment">
@@ -65,7 +65,7 @@ export default function Contact({props, inputChange, visibilityChange}){
                             <label htmlFor="website">Personal site / Portfolio</label>
                             <div className="input-entity">
                                 <input onChange={inputChange} type="website" name="website" id="website" autoComplete="url" placeholder="www.reallygreatsite.com" />
-                                <button id="website" onClick={visibilityChange} className={props.portfolio.portfolioVisibility? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
+                                <button id="website" onClick={visibilityChange} className={props.portfolio.portfolioVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
                             </div>
                         </div>
                 </form>

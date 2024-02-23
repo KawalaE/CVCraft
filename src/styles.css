@@ -376,3 +376,14 @@ input[type="file"] {
   height: 25px;  
   width: 25px;
 }
+input[type="checkbox"]{
+  width: fit-content;
+  width: 20px;
+  accent-color: #0d996a;
+}
+.checkbox{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  gap: 20px;
+}

@@ -1,8 +1,9 @@
 import "./styles.css"
 import { useState } from "react"
 
-export default function Education(){
-    const [show, setHide] = useState(false);
+export default function Education({education, inputChange, checkboxHandler}){
+    const [show, setHide] = useState(true);
+   
     return (
         <>
             <div className="form-segment">
@@ -16,21 +17,29 @@ export default function Education(){
                 {show ? (
                     <form style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                     <div className="form-section">
-                        <label htmlFor="startDate">Start date</label>
-                        <input type="date" name="date" id="startDate"/>
-                    </div>
-                    <div className="form-section">
-                        <label htmlFor="endDate">End date</label>
-                        <input type="date" name="date" id="endDate"/>
+                        <label htmlFor="uniTitle">Degree</label>
+                        <input onChange={inputChange} type="name" name="name" id="uniTitle" placeholder="Master's Degree in Math"/>
                     </div>
                     <div className="form-section">
                         <label htmlFor="uniName">Name of the Institution</label>
-                        <input type="name" name="name" id="uniName" placeholder="Wardiere university"/>
+                        <input onChange={inputChange} type="name" name="name" id="uniName" placeholder="Wardiere university"/>
                     </div>
                     <div className="form-section">
-                        <label htmlFor="uniTitle">Degree</label>
-                        <input type="name" name="name" id="uniTitle" placeholder="Master's Degree in Math"/>
+                        <label htmlFor="startDate">Start date</label>
+                        <input onChange={inputChange} type="date" name="date" id="startUniDate"/>
                     </div>
+                    <div className="form-section">
+                        <label htmlFor="endDate">End date</label>
+                        <input onChange={inputChange} type="date" name="date" id="endUniDate"/>
+                    </div>
+                    <div className="form-section">
+                        <div className="checkbox">
+                            <label htmlFor="study-check">Still studying</label>
+                            <input onChange={checkboxHandler} type="checkbox" id="study-check"></input>
+                        </div>
+                    </div>
+                    
+                    
                     <button className="add-btn">Add</button>
                 </form>
                 ) : null}
