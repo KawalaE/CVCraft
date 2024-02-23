@@ -17,8 +17,8 @@ export default function Profile({props}){
                 <img onClick={()=>setOpenModal(true)}  src={avatarURL.current} className="profile-pic"/>
             </div>
             <div className='upper-info'>
-                <p className='upper-full-name'>{props.fullName}</p>
-                <p className='upper-current-position'>{props.position}</p>
+               {props.name.nameVisibility && <p className='upper-full-name'>{props.name.fullName}</p>}
+               {props.position.positionVisibility && <p className='upper-current-position'>{props.position.position}</p>}
             </div>
 
         </div>

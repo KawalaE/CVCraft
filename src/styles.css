@@ -201,7 +201,7 @@ input[type="file"] {
   flex-direction: column;
   gap: 30px;
 }
-.hide:hover, .show:hover{
+.hide:hover, .show:hover, .open-eye-icon:hover, .closed-eye-icon:hover{
   filter: brightness(75%);
 }
 .form-section{
@@ -296,4 +296,83 @@ input[type="file"] {
   align-items: center;
   justify-content: center;
   max-width: 300px;
+}
+.contact-inside, .education-inside{
+  background-color:#f7f7f7;
+  width: fit-content;
+  padding: 10px 15px 10px 15px;
+  border-radius:15px;
+}
+.contact-inside p{
+  font-size: 0.8rem;
+}
+.contact-info, .education-info{
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: #0d996a;
+  padding: 5px 12px 5px 12px;
+  width: fit-content;
+  border-radius: 15px;;
+}
+.phone-icon{
+  background:url('./assets/phone.svg');
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
+.email-icon{
+  background:url('./assets/email.svg');
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
+.github-icon{
+  background:url('./assets/github.svg');
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
+.linkedin-icon{
+  background:url('./assets/linkedin.svg');
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
+.portfolio-icon{
+  background:url('./assets/webpage.svg');
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
+.contact-element{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 35px;
+  color:#313135
+}
+.contact-box, .education-box{
+  margin-left: 20px
+}
+.middle-resume-section{
+  display: flex;
+  gap: 10px;
+}
+.input-entity{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.open-eye-icon{
+  background:url('./assets/eye-open.svg');
+  background-size: 25px 25px;
+  height: 25px;  
+  width: 25px;
+}
+.closed-eye-icon{
+  background:url('./assets/eye-closed.svg');
+  background-size: 25px 25px;
+  height: 25px;  
+  width: 25px;
 }
