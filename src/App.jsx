@@ -81,9 +81,6 @@ export default function App(){
     const [startUniDate, setStartUniDate] = useState("12-12-2024");
     const [endUniDate, setEndUniDate] = useState("12-12-2024");
     const [stillStudying, setStillStudying] = useState(false);
-    const [staticEdu, setStaticEdu] = useState([]);
-    const [staticEduSegment, setStaticEduSegment] = useState([]);
-
     const education = {
         uniTitle: {uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate}
     };
@@ -93,23 +90,6 @@ export default function App(){
         setStillStudying(stillStudying ? false : true);
         console.log(stillStudying)
     }
-    function addEducation(){
-        console.log(education.uniTitle.uniName)
-        setStaticEdu([...staticEdu,{universityName: education.uniTitle.uniName, id: education.uniTitle.uniTitle}]);
-        setStaticEduSegment([...staticEduSegment, {
-            uniTitle: education.uniTitle.uniTitle,
-            uniName: education.uniTitle.uniName,
-            startDate: education.uniTitle.startUniDate,
-            endDate: education.uniTitle.endUniDate,
-        }]);
-        setUniTitle("");
-        setUniName("");
-        setStartUniDate("");
-        setEndUniDate("");
-        setStillStudying(false);
-    }
-
-    
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
         <div className="app">
@@ -119,15 +99,13 @@ export default function App(){
                     education={education} 
                     inputChange={handleChange} 
                     checkboxHandler={checkboxHandler}
-                    staticEdu={staticEdu}
-                    addEducation={addEducation}
                      />
                 <Skills/>
                 <Languages/>
                 <Work/>
             </div>
             <div ref={targetRef} className="right-side">
-                <Resume props={props} education={education} staticEducation={staticEduSegment}/>
+                <Resume props={props} education={education}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             

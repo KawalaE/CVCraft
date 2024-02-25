@@ -9,32 +9,12 @@ function EducationActiveSegment({education}){
         </>
     )
 }
-function EducationStaticSegment({eduArr}){
-    return (
-        <>  
-            {eduArr.length > 0 &&
-            eduArr.map((element) => {
-                return (
-                    <>
-                    <div className="edu-segment">
-                        <p className="degree-name">{element.uniTitle}</p>
-                        <p>{element.uniName}</p>
-                        <p className="edu-date">{element.startDate} - {element.endDate}</p>
-                    </div>
-                    </>
-                )
-            })
-            }
-        </>
-    )
-}
-export default function EducationResume({education, staticEducation}){
+export default function EducationResume({education}){
     return (
         <>
         <div className="education-box">
             <p className="education-info">Education</p>
             <div className="education-inside">
-                <EducationStaticSegment eduArr={staticEducation}></EducationStaticSegment>
                 <EducationActiveSegment education={education}></EducationActiveSegment>
             </div>
         </div>

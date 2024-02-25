@@ -14,7 +14,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
 }
 input, select {
   width: 300px;
@@ -408,4 +407,8 @@ input[type="checkbox"]{
   justify-content: space-between;
   align-items: center;
   margin: 0px 10px 0px 10px
+}
+.form-error{
+  color:rgb(255, 124, 124);
+  font-size: 0.9rem;
 }
