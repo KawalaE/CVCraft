@@ -357,6 +357,7 @@ input[type="file"] {
 }
 .middle-resume-section{
   display: flex;
+  justify-content: space-around;
   gap: 10px;
 }
 .input-entity{
@@ -386,4 +387,25 @@ input[type="checkbox"]{
   align-items:center;
   justify-content: center;
   gap: 20px;
+}
+.degree-name{
+  font-size: 1rem;
+  color: #414040;
+  font-weight: bold;
+}
+.edu-segment{
+  display: flex;
+  flex-direction: column;
+}
+.edu-segment p{
+  margin: 5px;
+}
+.edu-date{
+  font-size: 0.95rem;
+}
+.static-edu-shortcut{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 10px 0px 10px
 }

@@ -1,9 +1,26 @@
 import "./styles.css"
 import { useState } from "react"
 
-export default function Education({education, inputChange, checkboxHandler}){
+function StaticEducationInstance({array}){
+    return(
+        <>
+            {array.length > 0 && array.map((instance) => {
+                return (
+                    <>
+                    <div className="static-edu-shortcut">
+                        <p key={instance.id}>{instance.universityName}</p>
+                        <button class="open-eye-icon"></button>
+                    </div>
+                        
+                    </>
+                )
+            })}
+        </>
+    )
+}
+
+export default function Education({education, inputChange, checkboxHandler, staticEdu={staticEdu}, addEducation={addEducation}}){
     const [show, setHide] = useState(true);
-   
     return (
         <>
             <div className="form-segment">
@@ -13,6 +30,9 @@ export default function Education({education, inputChange, checkboxHandler}){
                             <h1>Education</h1>
                     </div>
                     <button className={show ? "hide" : "show"}  onClick={() =>show ? setHide(false) : setHide(true)}></button>
+                </div>
+                <div className="edu-instance">
+                    <StaticEducationInstance array={staticEdu}></StaticEducationInstance>
                 </div>
                 {show ? (
                     <form style={{animation: "slide-down 600ms forwards"}} className="contactForm">
@@ -38,9 +58,7 @@ export default function Education({education, inputChange, checkboxHandler}){
                             <input onChange={checkboxHandler} type="checkbox" id="study-check"></input>
                         </div>
                     </div>
-                    
-                    
-                    <button className="add-btn">Add</button>
+                    <button onClick={addEducation} className="add-btn" type="button">Add</button>
                 </form>
                 ) : null}
            </div>

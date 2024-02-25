@@ -1,4 +1,3 @@
-
 export default function ContactResume({props}){
     return(
         <>  
