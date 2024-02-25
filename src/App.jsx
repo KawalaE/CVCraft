@@ -34,6 +34,7 @@ export default function App(){
             setEndUniDate(e.target.value);
         }
     } 
+
     function  visibilityHandler(e){
         if(e.target.id === "name"){
             setNameVisibility(nameVisibility ? false : true);
@@ -61,11 +62,11 @@ export default function App(){
     const [phoneVisibility, setPhoneVisibility] = useState(true);
     const [email, setEmail] = useState("hello@reallygreatsite.com");
     const [emailVisibility, setEmailVisibility] = useState(true);
-    const [github, setGithub] = useState("https://github.com/YourRepo");
+    const [github, setGithub] = useState("github.com/YourRepo");
     const [githubVisibility, setGithubVisibility] = useState(true);
-    const [linkedin, setLinkedin] = useState("https://www.linkedin.com/in/your-profile/");
+    const [linkedin, setLinkedin] = useState("linkedin.com/in/your-profile/");
     const [linkedinVisibility, setLinkedinVisibility] = useState(true);
-    const [portfolio, setPortfolio] = useState("www.reallygreatsite.com");
+    const [portfolio, setPortfolio] = useState("reallygreatsite.com");
     const [portfolioVisibility, setPortfolioVisibility] = useState(true);
     const props = {
         name: {fullName, nameVisibility}, 
@@ -81,6 +82,9 @@ export default function App(){
     const [startUniDate, setStartUniDate] = useState("12-12-2024");
     const [endUniDate, setEndUniDate] = useState("12-12-2024");
     const [stillStudying, setStillStudying] = useState(false);
+    const [staticEduCollection, setStaticEduCollection] = useState([]);
+    const [emptyEducation, setEmptyEducation] = useState(true);
+
     const education = {
         uniTitle: {uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate}
     };
@@ -90,6 +94,17 @@ export default function App(){
         setStillStudying(stillStudying ? false : true);
         console.log(stillStudying)
     }
+    function onSubmit(){
+        setStaticEduCollection([...staticEduCollection, {
+            uniTitle : uniTitle,
+            uniName : uniName,
+            startUniDate : startUniDate,
+            endUniDate : endUniDate,
+        }]);
+        console.log(staticEduCollection.length)
+        staticEduCollection.length >= 0 ? setEmptyEducation(false) :  setEmptyEducation(true);
+    }
+
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
         <div className="app">
@@ -99,13 +114,14 @@ export default function App(){
                     education={education} 
                     inputChange={handleChange} 
                     checkboxHandler={checkboxHandler}
+                    onSubmit={onSubmit}
                      />
                 <Skills/>
                 <Languages/>
                 <Work/>
             </div>
             <div ref={targetRef} className="right-side">
-                <Resume props={props} education={education}/>
+                <Resume props={props} education={education} educationCollection={staticEduCollection} emptyEducation={emptyEducation}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             

@@ -1,3 +1,7 @@
+import { useState } from "react"
+
+
+
 function EducationActiveSegment({education}){
     return (
         <>  
@@ -9,13 +13,31 @@ function EducationActiveSegment({education}){
         </>
     )
 }
-export default function EducationResume({education}){
+function EducationStaticSegment({educationCollection}){
+    return(
+        educationCollection.map((element) => {
+            return (
+                <>  
+                    <div className="edu-segment">
+                        <p className="degree-name">{element.uniTitle}</p>
+                        <p>{element.uniName}</p>
+                        <p className="edu-date">{element.startUniDate} - {element.endUniDate}</p>
+                    </div>        
+                </>
+            )
+        })
+    ) 
+}
+export default function EducationResume({education, educationCollection, emptyEducation}){
     return (
         <>
+        {console.log(emptyEducation)}
         <div className="education-box">
             <p className="education-info">Education</p>
             <div className="education-inside">
-                <EducationActiveSegment education={education}></EducationActiveSegment>
+                <EducationStaticSegment educationCollection={educationCollection}></EducationStaticSegment>
+                {console.log(emptyEducation)}
+                {emptyEducation && <EducationActiveSegment education={education}></EducationActiveSegment>}
             </div>
         </div>
         </>
