@@ -97,7 +97,7 @@ export default function App(){
             uniTitle : uniTitle,
             uniName : uniName,
             startUniDate : startUniDate,
-            endUniDate : endUniDate,
+            endUniDate : stillStudying ? "now" : endUniDate,
         }]);
         displayEducation();
         setUniTitle("Your title");
@@ -114,7 +114,9 @@ export default function App(){
         setEndUniDate("12-12-2024");
         setStillStudying(false);
     }
-
+    function removeEduSegment(segmentName){
+        setStaticEduCollection(staticEduCollection.filter((element) => element.uniTitle !== segmentName));
+    }
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
         <div className="app">
@@ -132,7 +134,12 @@ export default function App(){
                 <Work/>
             </div>
             <div ref={targetRef} className="right-side">
-                <Resume props={props} education={education} educationCollection={staticEduCollection} emptyEducation={emptyEducation} />
+                <Resume 
+                    props={props} 
+                    education={education} 
+                    educationCollection={staticEduCollection} 
+                    emptyEducation={emptyEducation} 
+                    removeEduSegment={removeEduSegment}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             

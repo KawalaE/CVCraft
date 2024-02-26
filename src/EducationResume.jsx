@@ -13,30 +13,30 @@ function EducationActiveSegment({education}){
         </>
     )
 }
-function EducationStaticSegment({educationCollection}){
+function EducationStaticSegment({educationCollection, removeEduSegment}){
+   
     return(
         educationCollection.map((element) => {
             return (
                 <div key={element.uniTitle} className="edu-segment">
                     <div className="title-edu-segment">
                         <p className="degree-name">{element.uniTitle}</p>
-                        <button className="remove-edu-segment"></button>
+                        <button onClick={()=>removeEduSegment(element.uniTitle)} className="remove-edu-segment"></button>
                     </div>
-                    
                     <p>{element.uniName}</p>
                     <p className="edu-date">{element.startUniDate} - {element.endUniDate}</p>
-                </div>           
+                </div>     
             )
         })
     ) 
 }
-export default function EducationResume({education, educationCollection, emptyEducation}){
+export default function EducationResume({education, educationCollection, emptyEducation, removeEduSegment}){
     return (
         <>
         <div className="education-box">
             <p className="education-info">Education</p>
             <div className="education-inside">
-                <EducationStaticSegment educationCollection={educationCollection}></EducationStaticSegment>
+                <EducationStaticSegment educationCollection={educationCollection} removeEduSegment={removeEduSegment}></EducationStaticSegment>
                 {emptyEducation && <EducationActiveSegment education={education}></EducationActiveSegment>}
 
             </div>
