@@ -83,16 +83,14 @@ export default function App(){
     const [endUniDate, setEndUniDate] = useState("12-12-2024");
     const [stillStudying, setStillStudying] = useState(false);
     const [staticEduCollection, setStaticEduCollection] = useState([]);
-    const [emptyEducation, setEmptyEducation] = useState(true);
+    const [emptyEducation, setEmptyEducation] = useState(false);
 
     const education = {
         uniTitle: {uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate}
     };
 
     function checkboxHandler(){
-        console.log(stillStudying)
         setStillStudying(stillStudying ? false : true);
-        console.log(stillStudying)
     }
     function onSubmit(){
         setStaticEduCollection([...staticEduCollection, {
@@ -101,8 +99,20 @@ export default function App(){
             startUniDate : startUniDate,
             endUniDate : endUniDate,
         }]);
-        console.log(staticEduCollection.length)
-        staticEduCollection.length >= 0 ? setEmptyEducation(false) :  setEmptyEducation(true);
+        displayEducation();
+        setUniTitle("Your title");
+        setUniName("University name");
+        setStartUniDate("12-12-2024");
+        setEndUniDate("12-12-2024");
+        setStillStudying(false);
+    }
+    function displayEducation(){
+        setEmptyEducation(emptyEducation ? false : true);
+        setUniTitle("Your title");
+        setUniName("University name");
+        setStartUniDate("12-12-2024");
+        setEndUniDate("12-12-2024");
+        setStillStudying(false);
     }
 
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
@@ -115,13 +125,14 @@ export default function App(){
                     inputChange={handleChange} 
                     checkboxHandler={checkboxHandler}
                     onSubmit={onSubmit}
+                    displayEducation={displayEducation}
                      />
                 <Skills/>
                 <Languages/>
                 <Work/>
             </div>
             <div ref={targetRef} className="right-side">
-                <Resume props={props} education={education} educationCollection={staticEduCollection} emptyEducation={emptyEducation}/>
+                <Resume props={props} education={education} educationCollection={staticEduCollection} emptyEducation={emptyEducation} />
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             

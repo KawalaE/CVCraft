@@ -121,7 +121,7 @@ button{
   display: flex;
   width: 100%;
 }
-.close-modal{
+.close-modal, .remove-edu-segment{
     background:url('./assets/x.svg');
     background-size: 30px 30px;
     height: 30px;  
@@ -129,16 +129,29 @@ button{
     margin-left: auto;
     transition: all 100ms ease-in-out;
 }
-.close-modal:hover{
+.remove-edu-segment{
+  display: none;
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
+.edu-segment:hover .remove-edu-segment{
+  display: flex;
+}
+.close-modal:hover, .remove-edu-segment:hover{
   scale: 110%
 }
-.close-modal:active{
+.close-modal:active, .remove-edu-segment:hover{
   scale: 95%;
+}
+.title-edu-segment{
+  display: flex;
+  justify-content: space-between;
 }
 #image{
   padding: 5px;
 }
-.crop-btn, .file-loader-btn, .add-btn{
+.crop-btn, .file-loader-btn, .add-btn, .add-edu-btn{
   padding: 0.5em 1em;
   width: auto;
   border-radius: 5px;
@@ -152,7 +165,7 @@ button{
   font-weight: 700;
   transition: all 100ms ease-in-out;
 }
-.crop-btn:hover, .file-loader-btn:hover, .add-btn:hover{
+.crop-btn:hover, .file-loader-btn:hover, .add-btn:hover, .add-edu-btn:hover{
   background: #0d996a;
 }
 .loaded-img{
@@ -224,6 +237,9 @@ input[type="file"] {
   box-shadow: 0 7px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 10px;
   min-width: 340px;
+  display: flex;
+  flex-direction: column;
+
 }
 .form-icon-contact{
   background:url('./assets/person.svg');
@@ -427,4 +443,12 @@ input[type="checkbox"]{
 .form-error{
   color: red;
   font-size: 0.85rem;
+}
+.add-edu-btn{
+  width: fit-content;
+  align-self: center;
+  margin: 5px 0px 5px 0px;
+}
+.remove-edu-segment{
+
 }

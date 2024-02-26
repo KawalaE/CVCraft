@@ -17,13 +17,15 @@ function EducationStaticSegment({educationCollection}){
     return(
         educationCollection.map((element) => {
             return (
-                <>  
-                    <div className="edu-segment">
+                <div key={element.uniTitle} className="edu-segment">
+                    <div className="title-edu-segment">
                         <p className="degree-name">{element.uniTitle}</p>
-                        <p>{element.uniName}</p>
-                        <p className="edu-date">{element.startUniDate} - {element.endUniDate}</p>
-                    </div>        
-                </>
+                        <button className="remove-edu-segment"></button>
+                    </div>
+                    
+                    <p>{element.uniName}</p>
+                    <p className="edu-date">{element.startUniDate} - {element.endUniDate}</p>
+                </div>           
             )
         })
     ) 
@@ -31,13 +33,12 @@ function EducationStaticSegment({educationCollection}){
 export default function EducationResume({education, educationCollection, emptyEducation}){
     return (
         <>
-        {console.log(emptyEducation)}
         <div className="education-box">
             <p className="education-info">Education</p>
             <div className="education-inside">
                 <EducationStaticSegment educationCollection={educationCollection}></EducationStaticSegment>
-                {console.log(emptyEducation)}
                 {emptyEducation && <EducationActiveSegment education={education}></EducationActiveSegment>}
+
             </div>
         </div>
         </>
