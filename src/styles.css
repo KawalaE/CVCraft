@@ -212,6 +212,12 @@ input[type="file"] {
   border-radius: 0.75rem;
   padding: 10px 10px 10px 10px;
 }
+.form-section-edu{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+}
 .form-segment{
   background-color: #ffffff;
   border-radius: 0.75rem;
@@ -297,7 +303,7 @@ input[type="file"] {
   justify-content: center;
   max-width: 300px;
 }
-.contact-inside, .education-inside{
+.contact-inside{
   background-color:#f7f7f7;
   width: fit-content;
   padding: 10px 15px 10px 15px;
@@ -396,6 +402,10 @@ input[type="checkbox"]{
 .edu-segment{
   display: flex;
   flex-direction: column;
+  background-color:#f7f7f7;
+  width: fit-content;
+  padding: 10px 15px 10px 15px;
+  border-radius:15px;
 }
 .edu-segment p{
   margin: 5px;
@@ -408,4 +418,13 @@ input[type="checkbox"]{
   justify-content: space-between;
   align-items: center;
   margin: 0px 10px 0px 10px
+}
+.education-inside{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-error{
+  color: red;
+  font-size: 0.85rem;
 }
