@@ -449,6 +449,23 @@ input[type="checkbox"]{
   align-self: center;
   margin: 5px 0px 5px 0px;
 }
-.remove-edu-segment{
-
+.skills-segment{
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+.skills-section{
+  background-color:  #f7f7f7;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 15px;
+  overflow-wrap: break-word;
+}
+.skill-desc{
+  color: #1f1f1f;
+  font-size: 0.85rem;
+}
+.skill-name{
+  color: #0d996a;
+  font-weight: bold;
+  font-size: 0.95rem;
 }

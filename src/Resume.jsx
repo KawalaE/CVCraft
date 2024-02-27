@@ -4,7 +4,7 @@ import ContactResume from './ContactResume'
 import EducationResume from './EducationResume'
 import SkillsResume from './SkillsResume'
 
-export default function Resume({props, education, skills, educationCollection, emptyEducation, removeEduSegment}){
+export default function Resume({props, education, skills, skillsCollection, noSkills, educationCollection, emptyEducation, removeEduSegment}){
     return (
         <div className="resume">
                 <Profile props={props}/>
@@ -18,7 +18,10 @@ export default function Resume({props, education, skills, educationCollection, e
                         removeEduSegment={removeEduSegment}/>
                 </div>
                 <div className='lower-resume-section'>
-                    <SkillsResume skills={skills}/>
+                    <SkillsResume 
+                        skills={skills} 
+                        skillsCollection={skillsCollection}
+                        noSkills={noSkills}/>
                 </div>
                 
         </div>  

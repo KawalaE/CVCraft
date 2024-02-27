@@ -33,6 +33,7 @@ export default function App(){
         }else if(e.target.id === "endUniDate"){
             setEndUniDate(e.target.value);
         }else if(e.target.id === "skill"){
+            console.log("here")
             setSkillName(e.target.value);
         }else if(e.target.id === "skill-description"){
             setSkillDescription(e.target.value);
@@ -51,12 +52,13 @@ export default function App(){
         }else if(e.target.id === "github"){
             setGithubVisibility(githubVisibility ? false : true);
         }else if(e.target.id === "linkedin"){
+            console.log("here1")
             setLinkedinVisibility(linkedinVisibility ? false : true);
         }else if(e.target.id === "website"){
+            console.log("here2")
             setPortfolioVisibility(portfolioVisibility ? false : true);
         } 
     }
-    
 
     const [fullName, setFullName] = useState("Richard Sanchez");
     const [nameVisibility, setNameVisibility] = useState(true);
@@ -91,6 +93,7 @@ export default function App(){
     const [skillName, setSkillName] = useState("");
     const [skillDescription, setSkillDescription] = useState("");
     const [skillsCollection, setSkillsCollection] = useState([]);
+    const [noSkills, setNoSkills] = useState(false);
 
     const education = {
         uniTitle: {uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate}
@@ -125,6 +128,11 @@ export default function App(){
         setEndUniDate("12-12-2024");
         setStillStudying(false);
     }
+    function displaySkills(){
+        setNoSkills(noSkills ? false : true);
+        setSkillName("New Skill");
+        setSkillDescription("Optional description...")
+    }
     function removeEduSegment(segmentName){
         setStaticEduCollection(staticEduCollection.filter((element) => element.uniTitle !== segmentName));
     }
@@ -133,6 +141,7 @@ export default function App(){
             skillName : name,
             skillDescription : description,
         }]);
+        displaySkills();
         console.log(skillsCollection)
     }
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
@@ -149,7 +158,8 @@ export default function App(){
                      />
                 <Skills 
                     addSkill={addSkill}
-                    inpuChange={handleChange}/>
+                    inputChange={handleChange}
+                    displaySkills={displaySkills}/>
                 <Languages/>
                 <Work/>
             </div>
@@ -158,9 +168,11 @@ export default function App(){
                     props={props} 
                     education={education} 
                     skills={skills}
+                    skillsCollection={skillsCollection}
                     educationCollection={staticEduCollection} 
                     emptyEducation={emptyEducation} 
-                    removeEduSegment={removeEduSegment}/>
+                    removeEduSegment={removeEduSegment}
+                    noSkills={noSkills}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             
