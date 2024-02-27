@@ -225,7 +225,7 @@ input[type="file"] {
   border-radius: 0.75rem;
   padding: 10px 10px 10px 10px;
 }
-.form-section-edu{
+.form-section-edu, .form-section-skill{
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -328,7 +328,7 @@ input[type="file"] {
 .contact-inside p{
   font-size: 0.8rem;
 }
-.contact-info, .education-info{
+.contact-info, .education-info, .skill-info{
   color: #ffffff;
   font-weight: bold;
   font-size: 0.9rem;
@@ -374,7 +374,7 @@ input[type="file"] {
   height: 35px;
   color:#313135
 }
-.contact-box, .education-box{
+.contact-box, .education-box, .skill-box{
   margin-left: 20px
 }
 .middle-resume-section{

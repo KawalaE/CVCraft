@@ -32,6 +32,10 @@ export default function App(){
             setStartUniDate(e.target.value);
         }else if(e.target.id === "endUniDate"){
             setEndUniDate(e.target.value);
+        }else if(e.target.id === "skill"){
+            setSkillName(e.target.value);
+        }else if(e.target.id === "skill-description"){
+            setSkillDescription(e.target.value);
         }
     } 
 
@@ -84,10 +88,17 @@ export default function App(){
     const [stillStudying, setStillStudying] = useState(false);
     const [staticEduCollection, setStaticEduCollection] = useState([]);
     const [emptyEducation, setEmptyEducation] = useState(false);
+    const [skillName, setSkillName] = useState("");
+    const [skillDescription, setSkillDescription] = useState("");
+    const [skillsCollection, setSkillsCollection] = useState([]);
 
     const education = {
         uniTitle: {uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate}
     };
+    const skills = {
+        skillName: skillName,
+        skillDescription: skillDescription
+    }
 
     function checkboxHandler(){
         setStillStudying(stillStudying ? false : true);
@@ -117,6 +128,13 @@ export default function App(){
     function removeEduSegment(segmentName){
         setStaticEduCollection(staticEduCollection.filter((element) => element.uniTitle !== segmentName));
     }
+    function addSkill(name, description){
+        setSkillsCollection([...skillsCollection, {
+            skillName : name,
+            skillDescription : description,
+        }]);
+        console.log(skillsCollection)
+    }
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
         <div className="app">
@@ -129,7 +147,9 @@ export default function App(){
                     onSubmit={onSubmit}
                     displayEducation={displayEducation}
                      />
-                <Skills/>
+                <Skills 
+                    addSkill={addSkill}
+                    inpuChange={handleChange}/>
                 <Languages/>
                 <Work/>
             </div>
@@ -137,6 +157,7 @@ export default function App(){
                 <Resume 
                     props={props} 
                     education={education} 
+                    skills={skills}
                     educationCollection={staticEduCollection} 
                     emptyEducation={emptyEducation} 
                     removeEduSegment={removeEduSegment}/>

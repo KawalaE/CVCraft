@@ -3,7 +3,7 @@ import { useState } from "react"
 
 
 export default function Education({inputChange, checkboxHandler, onSubmit, displayEducation}){
-    const [show, setHide] = useState(true);
+    const [show, setHide] = useState(false);
     const [wrongTitle, setWrongTitle] = useState("");
     const [wrongUni, setWrongUni] = useState("");
     const [wrongStartDate, setWrongStartDate] = useState("");

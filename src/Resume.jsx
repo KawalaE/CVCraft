@@ -2,8 +2,9 @@ import './styles.css'
 import Profile from './Profile'
 import ContactResume from './ContactResume'
 import EducationResume from './EducationResume'
+import SkillsResume from './SkillsResume'
 
-export default function Resume({props, education, educationCollection, emptyEducation, removeEduSegment}){
+export default function Resume({props, education, skills, educationCollection, emptyEducation, removeEduSegment}){
     return (
         <div className="resume">
                 <Profile props={props}/>
@@ -16,7 +17,10 @@ export default function Resume({props, education, educationCollection, emptyEduc
                         emptyEducation={emptyEducation}
                         removeEduSegment={removeEduSegment}/>
                 </div>
+                <div className='lower-resume-section'>
+                    <SkillsResume skills={skills}/>
+                </div>
                 
-        </div>
+        </div>  
     )
 } 
