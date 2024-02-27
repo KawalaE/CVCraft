@@ -450,22 +450,32 @@ input[type="checkbox"]{
   margin: 5px 0px 5px 0px;
 }
 .skills-segment{
-  max-width: 250px;
-  margin-bottom: 20px;
-}
-.skills-section{
-  background-color:  #f7f7f7;
-  width: fit-content;
-  padding: 10px;
-  border-radius: 15px;
-  overflow-wrap: break-word;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
 }
 .skill-desc{
   color: #1f1f1f;
   font-size: 0.85rem;
+  width: 150px;
+  overflow-wrap:break-word ;
 }
 .skill-name{
   color: #0d996a;
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  max-width: 100px;
+  overflow-wrap: break-word;
+}
+.skills-collection{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: inherit;
+  max-width: 300px;
+  background-color:  #f7f7f7;
+  width: fit-content;
+  border-radius: 15px;
+  padding: 0px 10px 0px 10px
 }

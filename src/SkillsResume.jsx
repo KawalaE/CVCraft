@@ -30,10 +30,11 @@ export default function SkillsResume({skills, skillsCollection, noSkills}){
         <>
             <div className="skill-box">
                 <p className="skill-info">Skills</p>
-                <div className="skills-section">
+                <div className="skills-collection">
                     <SkillsStaticSegment skillsCollection={skillsCollection}/>
                     {noSkills && <SkillsActiveSegment skills={skills}/>}
                 </div>
+                    
             </div>
         </>
     )

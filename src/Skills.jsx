@@ -41,7 +41,7 @@ export default function Skills({addSkill, inputChange, displaySkills}){
                              <form onSubmit={skillSubmit} style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                              <div className="form-section-skill">
                                  <label htmlFor="skill">Add a skill</label>
-                                 <input onChange={inputChange}  maxLength={30} type="text" name="skill" id="skill" placeholder="JavaScript" />
+                                 <input onChange={inputChange}  maxLength={35} type="text" name="skill" id="skill" placeholder="JavaScript" />
                                  <p className="form-error">{error}</p>
                              </div>
                              <div className="form-section-skill">
