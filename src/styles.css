@@ -6,7 +6,6 @@
 body{
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background-color: #f0f0f0;
   color: rgb(73, 73, 73);
 }
@@ -228,7 +227,7 @@ input[type="file"] {
   border-radius: 0.75rem;
   padding: 10px 10px 10px 10px;
 }
-.form-section-edu, .form-section-skill{
+.form-section-edu, .form-section-skill, .form-section-work{
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -331,7 +330,7 @@ input[type="file"] {
 .contact-inside p{
   font-size: 0.8rem;
 }
-.contact-info, .education-info, .skill-info{
+.contact-info, .education-info, .skill-info, .work-info{
   color: #ffffff;
   font-weight: bold;
   font-size: 0.9rem;
@@ -414,12 +413,12 @@ input[type="checkbox"]{
   justify-content: center;
   gap: 20px;
 }
-.degree-name{
+.degree-name, .work-position{
   font-size: 1rem;
   color: #414040;
   font-weight: bold;
 }
-.edu-segment{
+.edu-segment, .work-segment{
   display: flex;
   flex-direction: column;
   background-color:#f7f7f7;
@@ -427,12 +426,16 @@ input[type="checkbox"]{
   padding: 10px 15px 10px 15px;
   border-radius:15px;
 }
-.edu-segment p{
+.edu-segment p, .work-segment p{
   margin: 5px;
 }
 .edu-date{
   font-size: 0.95rem;
 }
+.company-date{
+  display: flex;
+}
+
 .static-edu-shortcut{
   display: flex;
   justify-content: space-between;

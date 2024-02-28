@@ -32,10 +32,21 @@ export default function App(){
         }else if(e.target.id === "endUniDate"){
             setEndUniDate(e.target.value);
         }else if(e.target.id === "skill"){
-            console.log("here")
             setSkillName(e.target.value);
         }else if(e.target.id === "skill-description"){
             setSkillDescription(e.target.value);
+        }else if(e.target.id === "work-position"){
+            setPositionName(e.target.value);
+        }else if(e.target.id === "company-name"){
+            setCompanyName(e.target.value);
+        }else if(e.target.id === "startDate"){
+            setStartWorkDate(e.target.value);
+        }else if(e.target.id === "endDate"){
+            setEndWorkDate(e.target.value);
+        }else if(e.target.id === "work-check"){
+            setStillWorking(e.target.value);
+        }else if(e.target.id === "position-description"){
+            setJobDescription(e.target.value);
         }
     } 
 
@@ -51,10 +62,8 @@ export default function App(){
         }else if(e.target.id === "github"){
             setGithubVisibility(githubVisibility ? false : true);
         }else if(e.target.id === "linkedin"){
-            console.log("here1")
             setLinkedinVisibility(linkedinVisibility ? false : true);
         }else if(e.target.id === "website"){
-            console.log("here2")
             setPortfolioVisibility(portfolioVisibility ? false : true);
         } 
     }
@@ -89,10 +98,21 @@ export default function App(){
     const [stillStudying, setStillStudying] = useState(false);
     const [staticEduCollection, setStaticEduCollection] = useState([]);
     const [emptyEducation, setEmptyEducation] = useState(false);
+
     const [skillName, setSkillName] = useState("");
     const [skillDescription, setSkillDescription] = useState("");
     const [skillsCollection, setSkillsCollection] = useState([]);
     const [noSkills, setNoSkills] = useState(false);
+    
+    const [positionName, setPositionName] = useState("Position name");
+    const [companyName, setCompanyName] = useState("Company Name");
+    const [startWorkDate, setStartWorkDate] = useState("12-12-2024");
+    const [endWorkDate, setEndWorkDate] = useState("12-12-2024");
+    const [stillWorking, setStillWorking] = useState(false);
+    const [jobDescription, setJobDescription] = useState("");
+    const [noJob, setNoJob] = useState(false);
+    
+    const [workCollection, setWorkCollection] = useState([]);
 
     const education = {
         uniTitle: {uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate}
@@ -100,6 +120,14 @@ export default function App(){
     const skills = {
         skillName: skillName,
         skillDescription: skillDescription
+    }
+    const work = {
+        positionName :positionName,
+        companyName : companyName,
+        startWorkDate : startWorkDate,
+        endWorkDate : stillWorking ? "now" : endWorkDate,
+        stillWorking : stillWorking,
+        jobDescription : jobDescription
     }
 
     function checkboxHandler(){
@@ -146,6 +174,24 @@ export default function App(){
         displaySkills();
         console.log(skillsCollection)
     }
+    function displayWork(){
+        setNoJob(noJob ? false : true);
+        setPositionName("Your position");
+        setCompanyName("Company Name");
+        setStartWorkDate("12-02-2024");
+        setEndWorkDate("12-02-2024");
+        setJobDescription("Information about your position...")
+    }
+    function addWorkExperiance(position, company, startDate, endDate, description){
+        setWorkCollection([...workCollection, {
+            posiion: position,
+            company: company,
+            startDate: startDate,
+            endDate: stillWorking ? "now" : endWorkDate,
+            description : description
+        }])
+        console.log(workCollection)
+    }
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
         <div className="app">
@@ -162,18 +208,23 @@ export default function App(){
                     addSkill={addSkill}
                     inputChange={handleChange}
                     displaySkills={displaySkills}/>
-                <Work/>
+                <Work
+                    inputChange={handleChange}
+                    addWorkExperiance={addWorkExperiance}
+                    displayWork={displayWork}/>
             </div>
             <div ref={targetRef} className="right-side">
                 <Resume 
                     props={props} 
                     education={education} 
                     skills={skills}
+                    work={work}
                     skillsCollection={skillsCollection}
                     educationCollection={staticEduCollection} 
                     emptyEducation={emptyEducation} 
                     removeEduSegment={removeEduSegment}
                     noSkills={noSkills}
+                    noJob={noJob}
                     removeSkills={removeSkillSegment}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
