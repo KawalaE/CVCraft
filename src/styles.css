@@ -454,6 +454,9 @@ input[type="checkbox"]{
   align-items: center;
   gap: 10px;
   justify-content: space-between;
+  background-color:  #f7f7f7;
+  border-radius: 15px;
+  padding: 0px 10px 0px 10px
 }
 .skill-desc{
   color: #1f1f1f;
@@ -471,11 +474,8 @@ input[type="checkbox"]{
 .skills-collection{
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 10px;
   width: inherit;
   max-width: 300px;
-  background-color:  #f7f7f7;
   width: fit-content;
-  border-radius: 15px;
-  padding: 0px 10px 0px 10px
 }
