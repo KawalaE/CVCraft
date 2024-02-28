@@ -2,7 +2,7 @@ import "./styles.css"
 import { useState } from "react"
 
 export default function Skills({addSkill, inputChange, displaySkills}){
-    const [show, setHide] = useState(true);
+    const [show, setHide] = useState(false);
     const [error, setError] = useState("");
     const [addNewSkill, setAddNewSkill] = useState(false);
 

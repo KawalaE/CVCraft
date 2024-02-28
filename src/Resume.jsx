@@ -3,27 +3,33 @@ import Profile from './Profile'
 import ContactResume from './ContactResume'
 import EducationResume from './EducationResume'
 import SkillsResume from './SkillsResume'
+import WorkResume from './WorkResume'
 
 export default function Resume({props, education, skills, removeSkills, skillsCollection, noSkills, educationCollection, emptyEducation, removeEduSegment}){
     return (
         <div className="resume">
                 <Profile props={props}/>
-                <div className='middle-resume-section'>
-                    <ContactResume props={props}/>
-                    <EducationResume 
-                        props={props} 
-                        education={education} 
-                        educationCollection={educationCollection} 
-                        emptyEducation={emptyEducation}
-                        removeEduSegment={removeEduSegment}/>
+                <div className='resume-content'>
+                    <div className='middle-resume-section'>
+                        <ContactResume props={props}/>
+                        <SkillsResume 
+                            skills={skills} 
+                            skillsCollection={skillsCollection}
+                            noSkills={noSkills}
+                            removeSkills={removeSkills}/>
+                        
+                    </div>
+                    <div className='lower-resume-section'>
+                        <EducationResume 
+                            props={props} 
+                            education={education} 
+                            educationCollection={educationCollection} 
+                            emptyEducation={emptyEducation}
+                            removeEduSegment={removeEduSegment}/>
+                        <WorkResume/>
+                    </div>
                 </div>
-                <div className='lower-resume-section'>
-                    <SkillsResume 
-                        skills={skills} 
-                        skillsCollection={skillsCollection}
-                        noSkills={noSkills}
-                        removeSkills={removeSkills}/>
-                </div>
+               
                 
         </div>  
     )

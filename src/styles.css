@@ -382,6 +382,7 @@ input[type="file"] {
 }
 .middle-resume-section{
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   gap: 10px;
 }
@@ -481,4 +482,8 @@ input[type="checkbox"]{
   width: inherit;
   max-width: 300px;
   width: fit-content;
+}
+.resume-content{
+  display: flex;
+  justify-content: space-between;
 }
