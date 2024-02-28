@@ -121,7 +121,7 @@ button{
   display: flex;
   width: 100%;
 }
-.close-modal, .remove-edu-segment{
+.close-modal, .remove-edu-segment, .remove-skill-segment{
     background:url('./assets/x.svg');
     background-size: 30px 30px;
     height: 30px;  
@@ -129,7 +129,7 @@ button{
     margin-left: auto;
     transition: all 100ms ease-in-out;
 }
-.remove-edu-segment{
+.remove-edu-segment, .remove-skill-segment{
   display: none;
   background-size: 20px 20px;
   height: 20px;  
@@ -138,10 +138,13 @@ button{
 .edu-segment:hover .remove-edu-segment{
   display: flex;
 }
-.close-modal:hover, .remove-edu-segment:hover{
+.skills-segment:hover .remove-skill-segment{
+  display: flex;
+}
+.close-modal:hover, .remove-edu-segment:hover, .remove-skill-segment:hover{
   scale: 110%
 }
-.close-modal:active, .remove-edu-segment:hover{
+.close-modal:active, .remove-edu-segment:hover, .remove-skill-segment:hover{
   scale: 95%;
 }
 .title-edu-segment{
@@ -461,7 +464,7 @@ input[type="checkbox"]{
 .skill-desc{
   color: #1f1f1f;
   font-size: 0.85rem;
-  width: 150px;
+  width: 135px;
   overflow-wrap:break-word ;
 }
 .skill-name{

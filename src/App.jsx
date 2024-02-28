@@ -1,7 +1,6 @@
 import Education from "./Education"
 import Contact from "./Contact"
 import Skills from "./Skills"
-import Languages from "./Languages"
 import Work from "./Work"
 import Resume from "./Resume"
 import { usePDF } from "react-to-pdf"
@@ -136,6 +135,9 @@ export default function App(){
     function removeEduSegment(segmentName){
         setStaticEduCollection(staticEduCollection.filter((element) => element.uniTitle !== segmentName));
     }
+    function removeSkillSegment(segmentName){
+        setSkillsCollection(skillsCollection.filter((element) => element.skillName !== segmentName));
+    }
     function addSkill(name, description){
         setSkillsCollection([...skillsCollection, {
             skillName : name,
@@ -160,7 +162,6 @@ export default function App(){
                     addSkill={addSkill}
                     inputChange={handleChange}
                     displaySkills={displaySkills}/>
-                <Languages/>
                 <Work/>
             </div>
             <div ref={targetRef} className="right-side">
@@ -172,7 +173,8 @@ export default function App(){
                     educationCollection={staticEduCollection} 
                     emptyEducation={emptyEducation} 
                     removeEduSegment={removeEduSegment}
-                    noSkills={noSkills}/>
+                    noSkills={noSkills}
+                    removeSkills={removeSkillSegment}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             

@@ -4,7 +4,7 @@ import ContactResume from './ContactResume'
 import EducationResume from './EducationResume'
 import SkillsResume from './SkillsResume'
 
-export default function Resume({props, education, skills, skillsCollection, noSkills, educationCollection, emptyEducation, removeEduSegment}){
+export default function Resume({props, education, skills, removeSkills, skillsCollection, noSkills, educationCollection, emptyEducation, removeEduSegment}){
     return (
         <div className="resume">
                 <Profile props={props}/>
@@ -21,7 +21,8 @@ export default function Resume({props, education, skills, skillsCollection, noSk
                     <SkillsResume 
                         skills={skills} 
                         skillsCollection={skillsCollection}
-                        noSkills={noSkills}/>
+                        noSkills={noSkills}
+                        removeSkills={removeSkills}/>
                 </div>
                 
         </div>  
