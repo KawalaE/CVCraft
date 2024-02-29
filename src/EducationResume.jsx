@@ -2,18 +2,18 @@ import { useState } from "react"
 
 
 
-function EducationActiveSegment({education}){
+function EducationActiveSegment({education, accentColor}){
     return (
         <>  
             <div className="edu-segment">
                 <p className="degree-name">{education.uniTitle.uniTitle}</p>
-                <p className="uni-name">{education.uniTitle.uniName}</p>
+                <p style={{color: `${accentColor}`}} className="uni-name">{education.uniTitle.uniName}</p>
                 <p className="edu-date">{education.uniTitle.startUniDate} - {education.uniTitle.endUniDate}</p>
             </div>        
         </>
     )
 }
-function EducationStaticSegment({educationCollection, removeEduSegment}){
+function EducationStaticSegment({educationCollection, removeEduSegment, accentColor}){
    
     return(
         educationCollection.map((element) => {
@@ -23,21 +23,21 @@ function EducationStaticSegment({educationCollection, removeEduSegment}){
                         <p className="degree-name">{element.uniTitle}</p>
                         <button onClick={()=>removeEduSegment(element.uniTitle)} className="remove-edu-segment"></button>
                     </div>
-                    <p className="uni-name">{element.uniName}</p>
+                    <p style={{color: `${accentColor}`}} className="uni-name">{element.uniName}</p>
                     <p className="edu-date">{element.startUniDate} - {element.endUniDate}</p>
                 </div>     
             )
         })
     ) 
 }
-export default function EducationResume({education, educationCollection, emptyEducation, removeEduSegment}){
+export default function EducationResume({education, educationCollection, emptyEducation, removeEduSegment, accentColor}){
     return (
         <>
-        <div className="education-box">
-            <p className="education-info">Education</p>
+        <div  className="education-box">
+            <p style={{backgroundColor: `${accentColor}`}}className="education-info">Education</p>
             <div className="education-inside">
-                <EducationStaticSegment educationCollection={educationCollection} removeEduSegment={removeEduSegment}></EducationStaticSegment>
-                {emptyEducation && <EducationActiveSegment education={education}></EducationActiveSegment>}
+                <EducationStaticSegment accentColor={accentColor} educationCollection={educationCollection} removeEduSegment={removeEduSegment}></EducationStaticSegment>
+                {emptyEducation && <EducationActiveSegment accentColor={accentColor} education={education}></EducationActiveSegment>}
 
             </div>
         </div>

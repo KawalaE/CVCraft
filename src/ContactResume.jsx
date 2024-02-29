@@ -1,8 +1,8 @@
-export default function ContactResume({props}){
+export default function ContactResume({props, accentColor}){
     return(
         <>  
         <div className="contact-box">
-            <p className="contact-info">Contact</p>
+            <p className="contact-info" style={{backgroundColor: `${accentColor}`}}>Contact</p>
             <div className="contact-inside">
                 {props.phone.phoneVisibility && <div className="contact-element">
                     <p className="phone-icon"></p>
@@ -26,8 +26,7 @@ export default function ContactResume({props}){
                 </div>}
             </div>
             
-        </div>
-            
+        </div>   
         </>
     )
 }

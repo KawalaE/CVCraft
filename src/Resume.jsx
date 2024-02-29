@@ -19,18 +19,25 @@ export default function Resume({
     noSkills, 
     educationCollection, 
     emptyEducation, 
-    removeEduSegment}){
+    removeEduSegment,
+    accentColor}){
     return (
         <div className="resume">
-                <Profile props={props} pictureVisibility={pictureVisibility}/>
+                <Profile 
+                    props={props} 
+                    pictureVisibility={pictureVisibility}
+                    accentColor={accentColor}/>
                 <div className='resume-content'>
                     <div className='middle-resume-section'>
-                        <ContactResume props={props}/>
+                        <ContactResume 
+                            props={props}
+                            accentColor={accentColor}/>
                         <SkillsResume 
                             skills={skills} 
                             skillsCollection={skillsCollection}
                             noSkills={noSkills}
-                            removeSkills={removeSkills}/>
+                            removeSkills={removeSkills}
+                            accentColor={accentColor}/>
                         
                     </div>
                     <div className='lower-resume-section'>
@@ -40,12 +47,14 @@ export default function Resume({
                             educationCollection={educationCollection} 
                             emptyEducation={emptyEducation}
                             removeEduSegment={removeEduSegment}
+                            accentColor={accentColor}
                             />
                         <WorkResume
                             work={work}
                             noJob={noJob}
                             workCollection={workCollection}
                             removeWorkSegment={removeWorkSegment}
+                            accentColor={accentColor}
                         />
                     </div>
                 </div>

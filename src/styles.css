@@ -537,3 +537,26 @@ input[type="checkbox"]{
 .work-company{
   max-width: 120px;
 }
+#color-picker{
+  width: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+#color-picker{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+#color-picker::-webkit-color-swatch {
+  border-radius: 50%;
+  border: none;
+}
+#color-picker::-moz-color-swatch {
+  border-radius: 50%;
+  border:none;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Customize({pictureHandler}){
+export default function Customize({pictureHandler, colorHandler}){
     const [show, setHide] = useState(false);
     return(
         <>
@@ -18,6 +18,12 @@ export default function Customize({pictureHandler}){
                             <div className="checkbox">
                                 <label htmlFor="profile-pic-checkbox">Hide profile picture</label>
                                 <input onChange={pictureHandler} type="checkbox" id="profile-pic-checkbox"></input>
+                            </div>
+                        </div>
+                        <div className="form-section">
+                            <div className="checkbox">
+                                <label htmlFor="color-picker">Pick an accent color</label>
+                                <input onChange={colorHandler}type="color" id="color-picker"/>
                             </div>
                         </div>
                     </form>

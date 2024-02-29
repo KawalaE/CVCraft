@@ -112,6 +112,7 @@ export default function App(){
     const [stillWorking, setStillWorking] = useState(false);
     const [jobDescription, setJobDescription] = useState("");
     const [noJob, setNoJob] = useState(false);
+    const [accentColor, setAccentColor] = useState("#0d996a")
     
     const [workCollection, setWorkCollection] = useState([]);
 
@@ -129,6 +130,9 @@ export default function App(){
         endWorkDate : stillWorking ? "now" : endWorkDate,
         stillWorking : stillWorking,
         jobDescription : jobDescription
+    }
+    function colorHandler(e){
+        setAccentColor(e.target.value);
     }
     function pictureHandler(){
         setPictureVisibility(pictureVisibility ? false : true);
@@ -203,7 +207,10 @@ export default function App(){
     return (
         <div className="app">
             <div className="left-side">
-                <Contact props={props} inputChange={handleChange} visibilityChange={visibilityHandler}/>
+                <Contact 
+                    props={props} 
+                    inputChange={handleChange}
+                    visibilityChange={visibilityHandler}/>
                 <Education 
                     education={education} 
                     inputChange={handleChange} 
@@ -219,7 +226,9 @@ export default function App(){
                     addSkill={addSkill}
                     inputChange={handleChange}
                     displaySkills={displaySkills}/>
-                <Customize pictureHandler={pictureHandler}/>
+                <Customize 
+                    pictureHandler={pictureHandler}
+                    colorHandler={colorHandler}/>
             </div>
             <div ref={targetRef} className="right-side">
                 <Resume 
@@ -236,7 +245,8 @@ export default function App(){
                     noJob={noJob}
                     removeSkills={removeSkillSegment}
                     workCollection={workCollection}
-                    removeWorkSegment={removeWorkSegment}/>
+                    removeWorkSegment={removeWorkSegment}
+                    accentColor={accentColor}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             
