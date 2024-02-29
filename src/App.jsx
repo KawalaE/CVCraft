@@ -68,7 +68,7 @@ export default function App(){
             setPortfolioVisibility(portfolioVisibility ? false : true);
         } 
     }
-
+    const [pictureVisibility, setPictureVisibility] = useState(true);
     const [fullName, setFullName] = useState("Richard Sanchez");
     const [nameVisibility, setNameVisibility] = useState(true);
     const [position, setPosition] = useState("Marketing Manager");
@@ -130,7 +130,9 @@ export default function App(){
         stillWorking : stillWorking,
         jobDescription : jobDescription
     }
-
+    function pictureHandler(){
+        setPictureVisibility(pictureVisibility ? false : true);
+    }
     function checkboxHandler(){
         setStillStudying(stillStudying ? false : true);
     }
@@ -217,10 +219,11 @@ export default function App(){
                     addSkill={addSkill}
                     inputChange={handleChange}
                     displaySkills={displaySkills}/>
-                <Customize/>
+                <Customize pictureHandler={pictureHandler}/>
             </div>
             <div ref={targetRef} className="right-side">
                 <Resume 
+                    pictureVisibility={pictureVisibility}
                     props={props} 
                     education={education} 
                     skills={skills}

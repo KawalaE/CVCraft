@@ -76,13 +76,13 @@ button{
   cursor: pointer;
 }
 .profile{
-  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 100px;
-  margin: 20px 35px 0px 35px;
-
+  margin: 35px 35px 0px 35px;
 }
+
 .profile-pic{
   width: 175px;
   height: 175px;

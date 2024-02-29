@@ -1,8 +1,7 @@
 import { useState } from "react"
 
-export default function Customize(){
+export default function Customize({pictureHandler}){
     const [show, setHide] = useState(false);
-
     return(
         <>
             <div className="form-segment">
@@ -13,6 +12,16 @@ export default function Customize(){
                     </div>
                     <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
                 </div>
+                {show && (
+                    <form style={{animation: "slide-down 600ms forwards"}} className="contactForm">
+                        <div className="form-section">
+                            <div className="checkbox">
+                                <label htmlFor="profile-pic-checkbox">Hide profile picture</label>
+                                <input onChange={pictureHandler} type="checkbox" id="profile-pic-checkbox"></input>
+                            </div>
+                        </div>
+                    </form>
+                )}
             </div>
         </>
     )

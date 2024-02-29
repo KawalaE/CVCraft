@@ -6,6 +6,7 @@ import SkillsResume from './SkillsResume'
 import WorkResume from './WorkResume'
 
 export default function Resume({
+    pictureVisibility,
     props, 
     education, 
     skills, 
@@ -21,7 +22,7 @@ export default function Resume({
     removeEduSegment}){
     return (
         <div className="resume">
-                <Profile props={props}/>
+                <Profile props={props} pictureVisibility={pictureVisibility}/>
                 <div className='resume-content'>
                     <div className='middle-resume-section'>
                         <ContactResume props={props}/>
