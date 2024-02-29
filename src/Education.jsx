@@ -81,12 +81,12 @@ export default function Education({inputChange, checkboxHandler, onSubmit, displ
                         <form onSubmit={handleSubmit} style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                             <div className="form-section-edu">
                                 <label htmlFor="uniTitle">Degree</label>
-                                <input onChange={inputChange} type="name" name="name" id="uniTitle" placeholder="Master's Degree in Math"/>
+                                <input onChange={inputChange} maxLength={70} type="name" name="name" id="uniTitle" placeholder="Master's Degree in Math"/>
                                 <p className="form-error">{wrongTitle}</p>
                             </div>
                             <div className="form-section-edu">
                                 <label htmlFor="uniName">Name of the Institution</label>
-                                <input onChange={inputChange} type="name" name="name" id="uniName" placeholder="Wardiere university"/>
+                                <input onChange={inputChange} maxLength={70}type="name" name="name" id="uniName" placeholder="Wardiere university"/>
                                 <p className="form-error">{wrongUni}</p>
                             </div>
                             <div className="form-section-edu">

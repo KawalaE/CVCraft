@@ -7,7 +7,7 @@ function EducationActiveSegment({education}){
         <>  
             <div className="edu-segment">
                 <p className="degree-name">{education.uniTitle.uniTitle}</p>
-                <p>{education.uniTitle.uniName}</p>
+                <p className="uni-name">{education.uniTitle.uniName}</p>
                 <p className="edu-date">{education.uniTitle.startUniDate} - {education.uniTitle.endUniDate}</p>
             </div>        
         </>
@@ -23,7 +23,7 @@ function EducationStaticSegment({educationCollection, removeEduSegment}){
                         <p className="degree-name">{element.uniTitle}</p>
                         <button onClick={()=>removeEduSegment(element.uniTitle)} className="remove-edu-segment"></button>
                     </div>
-                    <p>{element.uniName}</p>
+                    <p className="uni-name">{element.uniName}</p>
                     <p className="edu-date">{element.startUniDate} - {element.endUniDate}</p>
                 </div>     
             )

@@ -92,12 +92,12 @@ export default function Work({inputChange, addWorkExperiance, displayWork}){
                             <form onSubmit={handleSubmit} style={{animation: "slide-down 600ms forwards"}} className="contactForm">
                                 <div className="form-section-work">
                                     <label htmlFor="work-position">Position</label>
-                                    <input onChange={inputChange} type="name" name="name" id="work-position" placeholder="Shift Manager"/>
+                                    <input onChange={inputChange} maxLength={50} type="name" name="name" id="work-position" placeholder="Shift Manager"/>
                                     <p className="form-error">{wrongPosition}</p>
                                 </div>
                                 <div className="form-section-work">
                                     <label htmlFor="company-name">Name of the Company</label>
-                                    <input onChange={inputChange} type="name" name="name" id="company-name" placeholder="Burger King"/>
+                                    <input onChange={inputChange} type="name" maxLength={50} name="name" id="company-name" placeholder="Burger King"/>
                                     <p className="form-error">{wrongCompanyName}</p>
                                 </div>
                                 <div className="form-section-work">
@@ -118,7 +118,7 @@ export default function Work({inputChange, addWorkExperiance, displayWork}){
                                 </div>
                                 <div className="form-section-work">
                                     <label htmlFor="position-description">Describe your position</label>
-                                    <textarea onChange={inputChange} name="position-description" id="position-description" cols="10" rows="5"  maxLength="300" placeholder="Information about your responsibilities ...">
+                                    <textarea onChange={inputChange} name="position-description" maxLength={200} id="position-description" cols="10" rows="5"  maxLength="300" placeholder="Information about your responsibilities ...">
                                     </textarea>
                                 </div>
                                 <button type="submit" className="add-btn">Add</button>

@@ -134,7 +134,7 @@ button{
   height: 20px;  
   width: 20px;
 }
-.edu-segment:hover .remove-edu-segmen{
+.edu-segment:hover .remove-edu-segment{
   display: flex;
 }
 .skills-segment:hover .remove-skill-segment{
@@ -276,6 +276,12 @@ input[type="file"] {
   height: 20px;  
   width: 20px;
 }
+.form-icon-custom{
+  background:url('./assets/settings.svg');
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
 .form-title{
   display: flex;
   align-items: center;
@@ -379,14 +385,12 @@ input[type="file"] {
   height: 35px;
   color:#313135
 }
-.contact-box, .education-box, .skill-box{
-  margin-left: 20px
-}
 .middle-resume-section{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 10px;
+  margin-left: 15px;
 }
 .input-entity{
   display: flex;
@@ -420,6 +424,7 @@ input[type="checkbox"]{
   font-size: 1rem;
   color: #414040;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 .edu-segment, .work-segment{
   display: flex;
@@ -437,6 +442,7 @@ input[type="checkbox"]{
 }
 .company-date{
   display: flex;
+  align-items: center;
 }
 
 .static-edu-shortcut{
@@ -470,7 +476,7 @@ input[type="checkbox"]{
 }
 .skill-desc{
   color: #1f1f1f;
-  font-size: 0.85rem;
+  font-size: 0.80rem;
   width: 135px;
   overflow-wrap:break-word ;
 }
@@ -492,7 +498,42 @@ input[type="checkbox"]{
 .resume-content{
   display: flex;
   justify-content: space-between;
+  padding: 20px;
 }
-.work-date{
+.work-date, .edu-date{
   font-size: 0.8rem;
+}
+.work-description{
+  font-size: 0.85rem;
+}
+.work-company, .uni-name{
+  font-size: 0.9rem;
+  color:#0d996a;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+.work-position, .degree-name{
+  font-size: 0.95rem;
+  overflow-wrap: break-word;
+}
+.work-segment, .edu-segment{
+  max-width: 300px;
+}
+.lower-resume-section{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-right: 15px;
+}
+.work-collection{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.work-description, #work-position, .work-company{
+  overflow-wrap:break-word;
+}
+.work-company{
+  max-width: 120px;
 }

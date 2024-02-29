@@ -3,6 +3,7 @@ import Contact from "./Contact"
 import Skills from "./Skills"
 import Work from "./Work"
 import Resume from "./Resume"
+import Customize from "./Customize"
 import { usePDF } from "react-to-pdf"
 import { useState } from "react"
 
@@ -178,6 +179,7 @@ export default function App(){
         console.log(skillsCollection)
     }
     function displayWork(){
+        console.log("inside display work")
         setNoJob(noJob ? false : true);
         setPositionName("Your position");
         setCompanyName("Company Name");
@@ -194,7 +196,6 @@ export default function App(){
             description : description
         }])
         displayWork();
-        console.log(workCollection)
     }
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
@@ -208,14 +209,15 @@ export default function App(){
                     onSubmit={onSubmit}
                     displayEducation={displayEducation}
                      />
-                <Skills 
-                    addSkill={addSkill}
-                    inputChange={handleChange}
-                    displaySkills={displaySkills}/>
                 <Work
                     inputChange={handleChange}
                     addWorkExperiance={addWorkExperiance}
                     displayWork={displayWork}/>
+                <Skills 
+                    addSkill={addSkill}
+                    inputChange={handleChange}
+                    displaySkills={displaySkills}/>
+                <Customize/>
             </div>
             <div ref={targetRef} className="right-side">
                 <Resume 
