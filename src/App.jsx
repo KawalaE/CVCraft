@@ -166,6 +166,9 @@ export default function App(){
     function removeSkillSegment(segmentName){
         setSkillsCollection(skillsCollection.filter((element) => element.skillName !== segmentName));
     }
+    function removeWorkSegment(segmentName){
+        setWorkCollection(workCollection.filter((element) => element.position !== segmentName));
+    }
     function addSkill(name, description){
         setSkillsCollection([...skillsCollection, {
             skillName : name,
@@ -184,12 +187,13 @@ export default function App(){
     }
     function addWorkExperiance(position, company, startDate, endDate, description){
         setWorkCollection([...workCollection, {
-            posiion: position,
+            position: position,
             company: company,
             startDate: startDate,
-            endDate: stillWorking ? "now" : endWorkDate,
+            endDate: stillWorking ? "now" : endDate,
             description : description
         }])
+        displayWork();
         console.log(workCollection)
     }
     const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
@@ -225,7 +229,9 @@ export default function App(){
                     removeEduSegment={removeEduSegment}
                     noSkills={noSkills}
                     noJob={noJob}
-                    removeSkills={removeSkillSegment}/>
+                    removeSkills={removeSkillSegment}
+                    workCollection={workCollection}
+                    removeWorkSegment={removeWorkSegment}/>
             </div>
             {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             

@@ -57,7 +57,7 @@ export default function Work({inputChange, addWorkExperiance, displayWork}){
                 e.target[1].value,
                 e.target[2].value,
                 e.target[3].value,
-                e.target[4].value,
+                e.target[5].value,
 
             )
             e.target[0].value = "";
@@ -65,6 +65,7 @@ export default function Work({inputChange, addWorkExperiance, displayWork}){
             e.target[2].checked = false;
             e.target[3].value = "";
             e.target[4].value = "";
+            e.target[5].value = "";
             setAddNewWork(false);
         }
     }

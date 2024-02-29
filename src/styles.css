@@ -120,7 +120,7 @@ button{
   display: flex;
   width: 100%;
 }
-.close-modal, .remove-edu-segment, .remove-skill-segment{
+.close-modal, .remove-edu-segment, .remove-skill-segment, .remove-work-segment{
     background:url('./assets/x.svg');
     background-size: 30px 30px;
     height: 30px;  
@@ -128,25 +128,28 @@ button{
     margin-left: auto;
     transition: all 100ms ease-in-out;
 }
-.remove-edu-segment, .remove-skill-segment{
+.remove-edu-segment, .remove-skill-segment, .remove-work-segment{
   display: none;
   background-size: 20px 20px;
   height: 20px;  
   width: 20px;
 }
-.edu-segment:hover .remove-edu-segment{
+.edu-segment:hover .remove-edu-segmen{
   display: flex;
 }
 .skills-segment:hover .remove-skill-segment{
   display: flex;
 }
-.close-modal:hover, .remove-edu-segment:hover, .remove-skill-segment:hover{
+.work-segment:hover .remove-work-segment{
+  display: flex;
+}
+.close-modal:hover, .remove-edu-segment:hover, .remove-skill-segment:hover, .remove-work-segment:hover {
   scale: 110%
 }
-.close-modal:active, .remove-edu-segment:hover, .remove-skill-segment:hover{
+.close-modal:active, .remove-edu-segment:active, .remove-skill-segment:active, .remove-work-segment:active{
   scale: 95%;
 }
-.title-edu-segment{
+.title-edu-segment, .title-work-segment{
   display: flex;
   justify-content: space-between;
 }
@@ -489,4 +492,7 @@ input[type="checkbox"]{
 .resume-content{
   display: flex;
   justify-content: space-between;
+}
+.work-date{
+  font-size: 0.8rem;
 }
