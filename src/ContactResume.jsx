@@ -14,15 +14,15 @@ export default function ContactResume({props, accentColor}){
                 </div>}
                 {props.github.githubVisibility && <div className="contact-element">
                     <p className="github-icon"></p>
-                    <p>{props.github.github}</p>
+                    <a href={`${props.github.github}`}>{props.github.github}</a>
                 </div>}
                 {props.linkedin.linkedinVisibility && <div className="contact-element">
                     <p className="linkedin-icon"></p>
-                    <p>{props.linkedin.linkedin}</p>
+                    <a href={`${props.linkedin.linkedin}`}>{props.linkedin.linkedin}</a>
                 </div>}
                 {props.portfolio.portfolioVisibility && <div className="contact-element">
                     <p className="portfolio-icon"></p>
-                    <p>{props.portfolio.portfolio}</p>
+                    <a href={`${props.portfolio.portfolio}`}>{props.portfolio.portfolio}</a>
                 </div>}
             </div>
             

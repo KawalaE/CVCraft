@@ -4,11 +4,16 @@ import Skills from "./Skills"
 import Work from "./Work"
 import Resume from "./Resume"
 import Customize from "./Customize"
-import { usePDF } from "react-to-pdf"
+import "./styles.css"
 import { useState } from "react"
+import { useRef } from "react";
+import { useReactToPrint } from 'react-to-print';
 
 export default function App(){
-
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    });
     function handleChange(e){
         if(e.target.id === "name"){
             setFullName(e.target.value);
@@ -203,7 +208,6 @@ export default function App(){
         }])
         displayWork();
     }
-    const { toPDF, targetRef } = usePDF({filename: "resume.pdf"});
     return (
         <div className="app">
             <div className="left-side">
@@ -229,8 +233,9 @@ export default function App(){
                 <Customize 
                     pictureHandler={pictureHandler}
                     colorHandler={colorHandler}/>
+                <button className="printer" onClick={handlePrint}></button>
             </div>
-            <div ref={targetRef} className="right-side">
+            <div ref={componentRef} className="right-side">
                 <Resume 
                     pictureVisibility={pictureVisibility}
                     props={props} 
@@ -248,7 +253,6 @@ export default function App(){
                     removeWorkSegment={removeWorkSegment}
                     accentColor={accentColor}/>
             </div>
-            {/*<button onClick={() => toPDF()}>Download PDF</button>*/}
             
         </div>
         
