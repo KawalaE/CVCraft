@@ -1,8 +1,17 @@
-* {
+*, *::before, *::after{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
     font-size: 16px;
+    border: none;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   }
+@font-face {
+  font-family: "Montserrat";
+  src: url('./assets/Montserrat-VariableFont_wght.woff') format('woff');
+  font-style: normal;
+}
 body{
   width: 100vw;
   height: 100vh;
@@ -62,6 +71,7 @@ button{
   height: 927px;
   border: 1px solid black;
   background-color: #ffffff ;
+  margin-top:20px;
 }
 .app{
   display: flex;
@@ -211,7 +221,7 @@ input[type="file"] {
   width:auto;
   background-color: #ffffff;
   border-radius: 0.75rem;
-  padding: 0px 5px 0px 5px;
+  padding: 5px 5px 5px 5px;
 }
 .hide{
   background:url('./assets/up-arrow.svg');
@@ -240,6 +250,12 @@ input[type="file"] {
 .hide:hover, .show:hover, .open-eye-icon:hover, .closed-eye-icon:hover, .printer:hover{
   filter: brightness(75%);
 }
+.logo{
+  color:#10b981;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin:30px 0px 20px 0px;
+}
 .form-section{
   display: flex;
   flex-direction: column;
@@ -253,6 +269,7 @@ input[type="file"] {
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 0.75rem;
+  padding: 5px;
 }
 .form-segment{
   background-color: #ffffff;
@@ -262,7 +279,6 @@ input[type="file"] {
   min-width: 340px;
   display: flex;
   flex-direction: column;
-
 }
 .form-icon-contact{
   background:url('./assets/person.svg');
@@ -347,6 +363,7 @@ input[type="file"] {
   align-items: center;
   justify-content: center;
   max-width: 300px;
+  gap: 20px;
 }
 .contact-inside{
   background-color:#f7f7f7;
@@ -396,6 +413,11 @@ input[type="file"] {
   height: 20px;  
   width: 20px;
 }
+.skill-box, .work-box, .education-box, .contact-box{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .contact-element{
   display: flex;
   align-items: center;
@@ -407,7 +429,7 @@ input[type="file"] {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 10px;
+  gap: 30px;
   margin-left: 15px;
 }
 .input-entity{
@@ -490,7 +512,7 @@ input[type="checkbox"]{
   justify-content: space-between;
   background-color:  #f7f7f7;
   border-radius: 15px;
-  padding: 0px 10px 0px 10px
+  padding: 10px 10px 10px 10px
 }
 .skill-desc{
   color: #1f1f1f;

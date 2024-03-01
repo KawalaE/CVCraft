@@ -211,6 +211,7 @@ export default function App(){
     return (
         <div className="app">
             <div className="left-side">
+                <p className="logo">CVCraft</p>
                 <Contact 
                     props={props} 
                     inputChange={handleChange}
