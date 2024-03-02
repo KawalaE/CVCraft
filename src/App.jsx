@@ -8,6 +8,7 @@ import "./styles.css"
 import { useState } from "react"
 import { useRef } from "react";
 import { useReactToPrint } from 'react-to-print';
+import { parseISO, format } from "date-fns"
 
 export default function App(){
     const componentRef = useRef();
@@ -37,9 +38,13 @@ export default function App(){
         }else if(e.target.id === "uniName"){
             setUniName(e.target.value);
         }else if(e.target.id === "startUniDate"){
-            setStartUniDate(e.target.value);
+            let date = e.target.value;
+            let formatedDate = format(parseISO(date), "MM/yyyy");
+            setStartUniDate(formatedDate);
         }else if(e.target.id === "endUniDate"){
-            setEndUniDate(e.target.value);
+            let date = e.target.value;
+            let formatedDate = format(parseISO(date), "MM/yyyy");
+            setEndUniDate(formatedDate);
         }else if(e.target.id === "skill"){
             setSkillName(e.target.value);
         }else if(e.target.id === "skill-description"){
@@ -49,9 +54,13 @@ export default function App(){
         }else if(e.target.id === "company-name"){
             setCompanyName(e.target.value);
         }else if(e.target.id === "startDate"){
-            setStartWorkDate(e.target.value);
+            let date = e.target.value;
+            let formatedDate = format(parseISO(date), "MM/yyyy");
+            setStartWorkDate(formatedDate.toString());
         }else if(e.target.id === "endDate"){
-            setEndWorkDate(e.target.value);
+            let date = e.target.value;
+            let formatedDate = format(parseISO(date), "MM/yyyy");
+            setEndWorkDate(formatedDate);
         }else if(e.target.id === "work-check"){
             setStillWorking(e.target.value);
         }else if(e.target.id === "position-description"){
