@@ -102,12 +102,12 @@ export default function Work({inputChange, addWorkExperiance, displayWork}){
                                 </div>
                                 <div className="form-section-work">
                                     <label htmlFor="startDate">Start date</label>
-                                    <input onChange={inputChange} type="date" name="date" id="startDate"/>
+                                    <input onChange={inputChange} type="month" name="date" id="startDate"/>
                                     <p className="form-error">{wrongStartDate}</p>
                                 </div>
                                 <div className="form-section-work">
                                     <label htmlFor="endDate">End date</label>
-                                    <input onChange={inputChange} type="date" name="date" id="endDate"/>
+                                    <input onChange={inputChange} type="month" name="date" id="endDate"/>
                                     <p className="form-error">{wrongEndDate}</p>
                                 </div>
                                 <div className="form-section-work">

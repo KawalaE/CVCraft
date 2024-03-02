@@ -12,6 +12,10 @@ export default function ContactResume({props, accentColor}){
                     <p className="email-icon"></p>
                     <p>{props.email.email}</p>
                 </div>}
+                {props.location.locationVisibility && <div className="contact-element">
+                    <p className="location-icon"></p>
+                    <p>{props.location.location}</p>
+                </div>}
                 {props.github.githubVisibility && <div className="contact-element">
                     <p className="github-icon"></p>
                     <a href={`${props.github.github}`}>{props.github.github}</a>

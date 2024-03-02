@@ -29,7 +29,10 @@ export default function App(){
             setLinkedin(e.target.value);
         }else if(e.target.id === "website"){
             setPortfolio(e.target.value);
-        }else if(e.target.id === "uniTitle"){
+        }else if(e.target.id === "location"){
+            setLocation(e.target.value);
+        }
+        else if(e.target.id === "uniTitle"){
             setUniTitle(e.target.value);
         }else if(e.target.id === "uniName"){
             setUniName(e.target.value);
@@ -71,7 +74,9 @@ export default function App(){
             setLinkedinVisibility(linkedinVisibility ? false : true);
         }else if(e.target.id === "website"){
             setPortfolioVisibility(portfolioVisibility ? false : true);
-        } 
+        } else if(e.target.id === "location"){
+            setLocationVisibility(locationVisibility ? false : true);
+        }
     }
     const [pictureVisibility, setPictureVisibility] = useState(true);
     const [fullName, setFullName] = useState("Richard Sanchez");
@@ -82,6 +87,8 @@ export default function App(){
     const [phoneVisibility, setPhoneVisibility] = useState(true);
     const [email, setEmail] = useState("hello@reallygreatsite.com");
     const [emailVisibility, setEmailVisibility] = useState(true);
+    const [location, setLocation] = useState("Warsaw");
+    const [locationVisibility, setLocationVisibility] = useState(true);
     const [github, setGithub] = useState("github.com/YourRepo");
     const [githubVisibility, setGithubVisibility] = useState(true);
     const [linkedin, setLinkedin] = useState("linkedin.com/in/your-profile/");
@@ -93,14 +100,15 @@ export default function App(){
         position:{position, positionVisibility}, 
         phone:{phoneNumber, phoneVisibility}, 
         email:{email, emailVisibility }, 
+        location: {location, locationVisibility},
         github:{github, githubVisibility}, 
         linkedin:{linkedin,linkedinVisibility}, 
         portfolio:{portfolio, portfolioVisibility}};
 
     const [uniTitle, setUniTitle] = useState("Master's Degree in Math");
     const [uniName, setUniName] = useState("Wardiere university");
-    const [startUniDate, setStartUniDate] = useState("12-12-2024");
-    const [endUniDate, setEndUniDate] = useState("12-12-2024");
+    const [startUniDate, setStartUniDate] = useState("Start date");
+    const [endUniDate, setEndUniDate] = useState("End date");
     const [stillStudying, setStillStudying] = useState(false);
     const [staticEduCollection, setStaticEduCollection] = useState([]);
     const [emptyEducation, setEmptyEducation] = useState(false);
@@ -112,8 +120,8 @@ export default function App(){
     
     const [positionName, setPositionName] = useState("Position name");
     const [companyName, setCompanyName] = useState("Company Name");
-    const [startWorkDate, setStartWorkDate] = useState("12-12-2024");
-    const [endWorkDate, setEndWorkDate] = useState("12-12-2024");
+    const [startWorkDate, setStartWorkDate] = useState("Start date");
+    const [endWorkDate, setEndWorkDate] = useState("End date");
     const [stillWorking, setStillWorking] = useState(false);
     const [jobDescription, setJobDescription] = useState("");
     const [noJob, setNoJob] = useState(false);
@@ -155,16 +163,16 @@ export default function App(){
         displayEducation();
         setUniTitle("Your title");
         setUniName("University name");
-        setStartUniDate("12-12-2024");
-        setEndUniDate("12-12-2024");
+        setStartUniDate("Start date");
+        setEndUniDate("End date");
         setStillStudying(false);
     }
     function displayEducation(){
         setEmptyEducation(emptyEducation ? false : true);
         setUniTitle("Your title");
         setUniName("University name");
-        setStartUniDate("12-12-2024");
-        setEndUniDate("12-12-2024");
+        setStartUniDate("Start date");
+        setEndUniDate("End date");
         setStillStudying(false);
     }
     function displaySkills(){
@@ -194,8 +202,8 @@ export default function App(){
         setNoJob(noJob ? false : true);
         setPositionName("Your position");
         setCompanyName("Company Name");
-        setStartWorkDate("12-02-2024");
-        setEndWorkDate("12-02-2024");
+        setStartWorkDate("Start date");
+        setEndWorkDate("End date");
         setJobDescription("Information about your position...")
     }
     function addWorkExperiance(position, company, startDate, endDate, description){

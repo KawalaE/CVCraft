@@ -46,6 +46,15 @@ export default function Contact({props, inputChange, visibilityChange}){
                                 <button id="email" onClick={visibilityChange} className={props.email.emailVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
                             </div>
                         </div>
+
+                        <div className="form-section">
+                            <label htmlFor="location">Location</label>
+                            <div className="input-entity">
+                                <input onChange={inputChange}  type="location" name="location" id="location" autoComplete="location" placeholder="Warsaw" />
+                                <button id="location" onClick={visibilityChange} className={props.location.locationVisibility ? "open-eye-icon" : "closed-eye-icon"} type="button"></button>
+                            </div>
+                        </div>
+
                         <div className="form-section">
                             <label htmlFor="github">Github</label>
                             <div className="input-entity">

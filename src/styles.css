@@ -109,8 +109,8 @@ button{
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
   max-width: 400px;
-  /*max-height: 650px;*/
-  max-height: fit-content;
+  /*max-height: */
+  max-height: 650px;
   padding: 20px;
   
   position: fixed;
@@ -276,7 +276,7 @@ input[type="file"] {
   border-radius: 0.75rem;
   box-shadow: 0 7px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 10px;
-  min-width: 340px;
+  min-width: 370px;
   display: flex;
   flex-direction: column;
 }
@@ -347,6 +347,8 @@ input[type="file"] {
   font-weight: bold;
   text-align: center;
   margin: 0;
+  overflow-wrap: break-word;
+  max-width: 300px;
 }
 .upper-current-position{
   font-size: 1.1rem;
@@ -355,6 +357,8 @@ input[type="file"] {
   color:white;
   padding: 5px 15px 5px 15px;
   border-radius: 15px;
+  overflow-wrap: break-word;
+  max-width: 300px;
 }
 .upper-info{
   display: flex;
@@ -409,6 +413,12 @@ input[type="file"] {
 }
 .portfolio-icon{
   background:url('./assets/webpage.svg');
+  background-size: 20px 20px;
+  height: 20px;  
+  width: 20px;
+}
+.location-icon{
+  background:url('./assets/location.svg');
   background-size: 20px 20px;
   height: 20px;  
   width: 20px;
@@ -589,16 +599,15 @@ input[type="checkbox"]{
   background-color: transparent;
   width: 30px;
   height: 30px;
-  border: none;
+  border:none;
   cursor: pointer;
 }
 #color-picker::-webkit-color-swatch {
   border-radius: 50%;
-  border: none;
+
 }
 #color-picker::-moz-color-swatch {
   border-radius: 50%;
-  border:none;
 }
 a{
   text-decoration: none;

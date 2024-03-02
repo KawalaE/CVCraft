@@ -91,12 +91,12 @@ export default function Education({inputChange, checkboxHandler, onSubmit, displ
                             </div>
                             <div className="form-section-edu">
                                 <label htmlFor="startDate">Start date</label>
-                                <input onChange={inputChange} type="date" name="date" id="startUniDate"/>
+                                <input onChange={inputChange} type="month" name="date" id="startUniDate"/>
                                 <p className="form-error">{wrongStartDate}</p>
                             </div>
                             <div className="form-section-edu">
                                 <label htmlFor="endDate">End date</label>
-                                <input onChange={inputChange} type="date" name="date" id="endUniDate"/>
+                                <input onChange={inputChange} type="month" name="date" id="endUniDate"/>
                                 <p className="form-error">{wrongEndDate}</p>
                             </div>
                             <div className="form-section-edu">
