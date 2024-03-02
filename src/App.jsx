@@ -150,7 +150,6 @@ export default function App(){
         companyName : companyName,
         startWorkDate : startWorkDate,
         endWorkDate : stillWorking ? "now" : endWorkDate,
-        stillWorking : stillWorking,
         jobDescription : jobDescription
     }
     function colorHandler(e){
@@ -161,6 +160,9 @@ export default function App(){
     }
     function checkboxHandler(){
         setStillStudying(stillStudying ? false : true);
+    }
+    function checkboxWorkHandler(){
+        setStillWorking(stillWorking ? false : true);
     }
     function onSubmit(){
         setStaticEduCollection([...staticEduCollection, {
@@ -243,6 +245,7 @@ export default function App(){
                 <Work
                     inputChange={handleChange}
                     addWorkExperiance={addWorkExperiance}
+                    checkboxWorkHandler={checkboxWorkHandler}
                     displayWork={displayWork}/>
                 <Skills 
                     addSkill={addSkill}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Work({inputChange, addWorkExperiance, displayWork}){
+export default function Work({inputChange, checkboxWorkHandler,addWorkExperiance, displayWork}){
     const [show, setHide] = useState(true);
     const [addNewWork, setAddNewWork] = useState(false);
     const [wrongStartDate, setWrongStartDate] = useState("");
@@ -113,7 +113,7 @@ export default function Work({inputChange, addWorkExperiance, displayWork}){
                                 <div className="form-section-work">
                                     <div className="checkbox">
                                         <label htmlFor="still-working">Still working</label>
-                                        <input onChange={inputChange} type="checkbox" id="work-check"/>
+                                        <input onChange={checkboxWorkHandler} type="checkbox" id="work-check"/>
                                     </div>
                                 </div>
                                 <div className="form-section-work">
