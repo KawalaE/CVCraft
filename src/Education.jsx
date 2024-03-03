@@ -72,7 +72,10 @@ export default function Education({inputChange, checkboxHandler, onSubmit, displ
                             <p className="form-icon-education"></p>
                             <h1>Education</h1>
                     </div>
-                    <button className={show ? "hide" : "show"}  onClick={() =>show ? setHide(false) : setHide(true)}></button>
+                    <button className={show ? "hide" : "show"}  onClick={() =>{
+                        show ? setHide(false) : setHide(true);
+
+                        }}></button>
                 </div>
                 {show ? (
                     <>

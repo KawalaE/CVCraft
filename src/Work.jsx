@@ -66,6 +66,7 @@ export default function Work({inputChange, checkboxWorkHandler,addWorkExperiance
             e.target[3].value = "";
             e.target[4].value = "";
             e.target[5].value = "";
+
             setAddNewWork(false);
         }
     }
@@ -82,7 +83,10 @@ export default function Work({inputChange, checkboxWorkHandler,addWorkExperiance
                     <p className="form-icon-briefcase"></p>
                     <h1>Work experience</h1>
                 </div>
-                <button className={show ? "hide" : "show"} onClick={() =>show ? setHide(false) : setHide(true)}></button>
+                <button className={show ? "hide" : "show"} onClick={
+                    () =>{
+                        show ? setHide(false) : setHide(true);
+                    }}></button>
             </div>
                 
                 {show ? (

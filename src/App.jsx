@@ -8,7 +8,7 @@ import "./styles.css"
 import { useState } from "react"
 import { useRef } from "react";
 import { useReactToPrint } from 'react-to-print';
-import { parseISO, format } from "date-fns"
+import { parseISO, format, set } from "date-fns"
 
 export default function App(){
     const componentRef = useRef();
@@ -209,7 +209,6 @@ export default function App(){
         console.log(skillsCollection)
     }
     function displayWork(){
-        console.log("inside display work")
         setNoJob(noJob ? false : true);
         setPositionName("Your position");
         setCompanyName("Company Name");
@@ -227,10 +226,44 @@ export default function App(){
         }])
         displayWork();
     }
+    
+    let prevTheme = localStorage.getItem("theme");
+    const [currentTheme, setCurrentTheme] = useState( prevTheme  ? prevTheme : "light-theme");
+    const setDarkMode = () => {
+        document.querySelector("body").setAttribute("data-theme", "dark");
+    }
+    const setLightMode = () => {
+        document.querySelector("body").setAttribute("data-theme", "light");
+    }
+    currentTheme === "dark-theme" ? setDarkMode() : setLightMode();
+  
+    
+    const toggleTheme = e => {
+        if(e.target.className === "light-theme"){
+            setDarkMode();
+        } else setLightMode();
+    }
+    
+    function themeHandler(){
+        if(currentTheme === "light-theme"){
+            setCurrentTheme("dark-theme");
+            localStorage.setItem("theme", "dark-theme");
+        } else {
+            setCurrentTheme("light-theme");
+            localStorage.setItem("theme", "light-theme");
+        }
+    }
     return (
         <div className="app">
             <div className="left-side">
-                <p className="logo">CVCraft</p>
+                <div className="top-page">
+                    <p className="logo">CVCraft</p>
+                    <button onClick={(e) => {
+                        themeHandler();
+                        toggleTheme(e);
+                    }} className={currentTheme} id="theme" ></button>
+                </div>
+                
                 <Contact 
                     props={props} 
                     inputChange={handleChange}
