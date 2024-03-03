@@ -228,7 +228,12 @@ export default function App(){
     }
     
     let prevTheme = localStorage.getItem("theme");
-    const [currentTheme, setCurrentTheme] = useState( prevTheme  ? prevTheme : "light-theme");
+    
+    const sysTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark-theme" : "light-theme";
+    console.log(sysTheme)
+    console.log(prevTheme)
+    
+    const [currentTheme, setCurrentTheme] = useState(prevTheme !== null? prevTheme : sysTheme);
     const setDarkMode = () => {
         document.querySelector("body").setAttribute("data-theme", "dark");
     }
