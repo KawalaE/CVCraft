@@ -699,9 +699,6 @@ a:hover{
   .form-segment{
     min-width: 250px;
   }
-  .form-label{
-    max-width: 230px;
-  }
   input, textarea{
     width: 180px;
   }
