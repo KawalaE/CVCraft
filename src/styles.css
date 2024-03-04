@@ -98,6 +98,7 @@ button{
   display: flex;
   justify-content: center;
   gap: 100px;
+  flex-wrap: wrap;
 }
 .add-picture{
   margin-top: 30px;
@@ -665,4 +666,49 @@ a:hover{
 }
 .light-theme:hover, .dark-theme:hover{
   filter:brightness(0.5);
+}
+@media all and (max-width: 735px) {
+  .app{
+    gap: 0px;
+  }
+  .right-side{
+    scale: 0.8;
+  }
+}
+@media all and (max-width: 550px){
+  .right-side{
+    transform: scale(0.6);
+    margin: -150px 0;
+  }
+  .form-segment{
+   min-width: 300px;
+  }
+  .form-label{
+    max-width: 280px;
+  }
+  input, textarea{
+    width: 200px;
+  }
+}
+@media all and (max-width: 420px){
+
+  .right-side{
+    transform: scale(0.45);
+    margin: -250px 0;
+  }
+  .form-segment{
+    min-width: 250px;
+  }
+  .form-label{
+    max-width: 230px;
+  }
+  input, textarea{
+    width: 180px;
+  }
+}
+@media all and (max-width: 300px){
+  right-side{
+    transform: scale(0.45);
+    margin: -250px 0;
+  }
 }

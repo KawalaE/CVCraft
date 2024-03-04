@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Work({inputChange, checkboxWorkHandler,addWorkExperiance, displayWork}){
-    const [show, setHide] = useState(true);
+    const [show, setHide] = useState(false);
     const [addNewWork, setAddNewWork] = useState(false);
     const [wrongStartDate, setWrongStartDate] = useState("");
     const [wrongEndDate, setWrongEndDate] = useState("");

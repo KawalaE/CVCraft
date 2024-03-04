@@ -135,9 +135,12 @@ export default function App(){
     const [jobDescription, setJobDescription] = useState("");
     const [noJob, setNoJob] = useState(false);
     const [accentColor, setAccentColor] = useState("#0d996a")
-    
     const [workCollection, setWorkCollection] = useState([]);
 
+    let prevTheme = localStorage.getItem("theme");
+    const sysTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark-theme" : "light-theme";
+    const [currentTheme, setCurrentTheme] = useState(prevTheme !== null? prevTheme : sysTheme);
+    
     const education = {
         uniTitle: {uniTitle, uniName, startUniDate, endUniDate: stillStudying ? "now" : endUniDate}
     };
@@ -206,7 +209,6 @@ export default function App(){
             skillDescription : description,
         }]);
         displaySkills();
-        console.log(skillsCollection)
     }
     function displayWork(){
         setNoJob(noJob ? false : true);
@@ -226,14 +228,8 @@ export default function App(){
         }])
         displayWork();
     }
-    
-    let prevTheme = localStorage.getItem("theme");
-    
-    const sysTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark-theme" : "light-theme";
-    console.log(sysTheme)
-    console.log(prevTheme)
-    
-    const [currentTheme, setCurrentTheme] = useState(prevTheme !== null? prevTheme : sysTheme);
+
+
     const setDarkMode = () => {
         document.querySelector("body").setAttribute("data-theme", "dark");
     }
@@ -267,8 +263,9 @@ export default function App(){
                         themeHandler();
                         toggleTheme(e);
                     }} className={currentTheme} id="theme" ></button>
+                    <button className="printer" onClick={handlePrint}></button>
+
                 </div>
-                
                 <Contact 
                     props={props} 
                     inputChange={handleChange}
@@ -292,7 +289,6 @@ export default function App(){
                 <Customize 
                     pictureHandler={pictureHandler}
                     colorHandler={colorHandler}/>
-                <button className="printer" onClick={handlePrint}></button>
             </div>
             <div ref={componentRef} className="right-side">
                 <Resume 
