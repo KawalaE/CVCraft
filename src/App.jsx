@@ -1,14 +1,14 @@
-import Education from "./Education"
-import Contact from "./Contact"
-import Skills from "./Skills"
-import Work from "./Work"
+import Education from "./Education/Education"
+import Contact from "./Contact/Contact"
+import Skills from "./Skills/Skills"
+import Work from "./Work/Work"
 import Resume from "./Resume"
 import Customize from "./Customize"
 import "./styles.css"
 import { useState } from "react"
 import { useRef } from "react";
 import { useReactToPrint } from 'react-to-print';
-import { parseISO, format, set } from "date-fns"
+import { parseISO, format} from "date-fns"
 
 export default function App(){
     const componentRef = useRef();

@@ -17,6 +17,16 @@
   --body-background: white;
   --logo-font: #10b981;
   --icon-brightness: brightness(0.5);
+  --white : #fff;
+  --dark-hover: #1f1f1f;
+  --input-secondary: #c0c4c9;
+  --input-primary: #f9fafb;
+  --input-focus: #6858f0;
+  --secondary-green: #0d996a;
+  --grey-highlight: #414040;
+  --error: red;
+  --segment-background: #f7f7f7;
+  --main-font:rgb(73, 73, 73);
 }
 
 [data-theme="dark"]{
@@ -32,12 +42,11 @@
   --icon-brightness: brightness(0.5);
   --brightness-hover: brightness(0.7);
 }
-
 body{
   width: 100vw;
   height: 100vh;
   background-color: var(--body-background);
-  color: rgb(73, 73, 73);
+  color: var(--main-font)
 }
 .contactForm{
     display: flex;
@@ -50,15 +59,15 @@ input, select {
   height: 35px;
   font-size: 0.9rem;
   cursor: pointer;
-  border: 1px solid #c0c4c9;
-  background: #f9fafb;
+  border: 1px solid var(--input-secondary);
+  background: var(--input-primary);
   border-radius: 5px;
   padding: 10px;
-  border-bottom: 2px solid #c0c4c9;
+  border-bottom: 2px solid var(--input-secondary);
 }
 input:focus, select:focus, textarea:focus{
   outline: none !important;
-  border: 2px solid #6858f0;
+  border: 2px solid var(--input-focus);
 }
 select{
   height: 40px;
@@ -69,14 +78,13 @@ textarea {
   font-size: 0.9rem;
   cursor: pointer;
 
-  background:#f9fafb;
+  background: var(--input-primary);
   font-family: inherit;
   box-shadow: none;
-  border: 1px solid #c0c4c9;
+  border: 1px solid var(--input-secondary);
   border-radius: 5px;
   resize:none;
 }
-
 button{
   cursor: pointer;
   background: none;
@@ -91,7 +99,7 @@ button{
   width: 670px;
   height: 927px;
   border: 1px solid black;
-  background-color: #ffffff ;
+  background-color: var(--white);
   margin-top:20px;
 }
 .app{
@@ -126,30 +134,25 @@ button{
   
 }
 .modal{
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  
   max-width: 400px;
   /*max-height: */
   max-height: 650px;
   padding: 20px;
-  
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
-  
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 @media print {
-
    @page {
       size: 670px 927px;
       overflow: hidden;
@@ -157,7 +160,6 @@ button{
     .resume{
       border:none;
     }
- 
 }
 .modal-top{
   display: flex;
@@ -177,13 +179,7 @@ button{
   height: 20px;  
   width: 20px;
 }
-.edu-segment:hover .remove-edu-segment{
-  display: flex;
-}
-.skills-segment:hover .remove-skill-segment{
-  display: flex;
-}
-.work-segment:hover .remove-work-segment{
+.edu-segment:hover .remove-edu-segment, .work-segment:hover .remove-work-segment, .skills-segment:hover .remove-skill-segment{
   display: flex;
 }
 .close-modal:hover, .remove-edu-segment:hover, .remove-skill-segment:hover, .remove-work-segment:hover {
@@ -207,21 +203,20 @@ button{
   background: #10b981;
   top: 1em;
   right: 1em;
-  color: #fff;
+  color: var(--white);
   font-weight: 500;
   cursor: pointer;
   font-weight: 700;
   transition: all 100ms ease-in-out;
 }
 .crop-btn:hover, .file-loader-btn:hover, .add-btn:hover, .add-edu-btn:hover{
-  background: #0d996a;
+  background: var(--secondary-green);
 }
 .loaded-img{
   width: auto; /* or any custom size */
   height: 100%; 
   object-fit: contain;
 }
-
 input[type="file"] {
   display: none;
 }
@@ -241,7 +236,7 @@ input[type="file"] {
   justify-content: space-between;
   align-items: center;
   width:auto;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 0.75rem;
   padding: 5px 5px 5px 5px;
 }
@@ -269,7 +264,6 @@ input[type="file"] {
   width: 35px;
   filter: var(--icon-brightness);
 }
-
 .hide:hover, .show:hover, .open-eye-icon:hover, .closed-eye-icon:hover{
   filter: brightness(75%);
 }
@@ -284,7 +278,7 @@ input[type="file"] {
 .form-section{
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 5px 10px 5px 10px;
   border-radius: 0.75rem;
   padding: 10px 10px 10px 10px;
@@ -292,12 +286,12 @@ input[type="file"] {
 .form-section-edu, .form-section-skill, .form-section-work{
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 0.75rem;
   padding: 5px;
 }
 .form-segment{
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 0.75rem;
   box-shadow: 0 7px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -353,15 +347,6 @@ input[type="file"] {
   width: fit-content;
   margin: 5px 0px 5px 0px;
 }
-
-@keyframes slide-down{
-  0% {
-    transform: translateY(-5%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
 .upper-part{
   display: flex;
   justify-content: space-around;
@@ -378,8 +363,8 @@ input[type="file"] {
 .upper-current-position{
   font-size: 1.1rem;
   font-weight: bold;
-  background-color:#0d996a;
-  color:white;
+  background-color: var(--secondary-green);
+  color:var(--white);
   padding: 5px 15px 5px 15px;
   border-radius: 15px;
   overflow-wrap: break-word;
@@ -395,7 +380,7 @@ input[type="file"] {
   gap: 20px;
 }
 .contact-inside{
-  background-color:#f7f7f7;
+  background-color:var(--white);
   width: fit-content;
   padding: 10px 15px 10px 15px;
   border-radius:15px;
@@ -407,7 +392,7 @@ input[type="file"] {
   color: #ffffff;
   font-weight: bold;
   font-size: 0.9rem;
-  background-color: #0d996a;
+  background-color: var(--secondary-green);
   padding: 5px 12px 5px 12px;
   width: fit-content;
   border-radius: 15px;;
@@ -487,7 +472,7 @@ input[type="file"] {
 input[type="checkbox"]{
   width: fit-content;
   width: 20px;
-  accent-color: #0d996a;
+  accent-color: var(--secondary-green);
 }
 .checkbox{
   display: flex;
@@ -497,14 +482,14 @@ input[type="checkbox"]{
 }
 .degree-name, .work-position{
   font-size: 1rem;
-  color: #414040;
+  color: var(--grey-highlight);
   font-weight: bold;
   overflow-wrap: break-word;
 }
 .edu-segment, .work-segment{
   display: flex;
   flex-direction: column;
-  background-color:#f7f7f7;
+  background-color:var(--segment-background);
   width: fit-content;
   padding: 10px 15px 10px 15px;
   border-radius:15px;
@@ -519,7 +504,6 @@ input[type="checkbox"]{
   display: flex;
   align-items: center;
 }
-
 .static-edu-shortcut{
   display: flex;
   justify-content: space-between;
@@ -532,7 +516,7 @@ input[type="checkbox"]{
   gap: 5px;
 }
 .form-error{
-  color: red;
+  color: var(--error);
   font-size: 0.85rem;
 }
 .add-edu-btn{
@@ -545,18 +529,18 @@ input[type="checkbox"]{
   align-items: center;
   gap: 10px;
   justify-content: space-between;
-  background-color:  #f7f7f7;
+  background-color: var(--segment-background);
   border-radius: 15px;
   padding: 10px 10px 10px 10px
 }
 .skill-desc{
-  color: #1f1f1f;
+  color: var(--dark-hover);
   font-size: 0.80rem;
   width: 135px;
   overflow-wrap:break-word ;
 }
 .skill-name{
-  color: #0d996a;
+  color: var(--secondary-green);
   font-weight: bold;
   font-size: 0.9rem;
   max-width: 100px;
@@ -583,7 +567,7 @@ input[type="checkbox"]{
 }
 .work-company, .uni-name{
   font-size: 0.9rem;
-  color:#0d996a;
+  color:var(--secondary-green);
   font-weight: bold;
   overflow-wrap: break-word;
 }
@@ -627,20 +611,16 @@ input[type="checkbox"]{
   border:none;
   cursor: pointer;
 }
-#color-picker::-webkit-color-swatch {
-  border-radius: 50%;
-
-}
-#color-picker::-moz-color-swatch {
+#color-picker::-moz-color-swatch, #color-picker::-webkit-color-swatch{
   border-radius: 50%;
 }
 a{
   text-decoration: none;
-  color: #414040;
+  color: var(--grey-highlight);
   font-size: 0.8rem;
 }
 a:hover{
-  color: #1f1f1f;
+  color: var(--dark-hover);
 }
 .top-page{
   display: flex;
@@ -649,9 +629,7 @@ a:hover{
   margin: 30px 0px 20px 0px
 }
 
-/*Theme switch*/
-
-
+/*Theme switch css*/
 .light-theme{
   background:url('./assets/moon.svg');
   background-size: 40px 40px;
@@ -667,6 +645,7 @@ a:hover{
 .light-theme:hover, .dark-theme:hover{
   filter:brightness(0.5);
 }
+/*Responsivness css*/
 @media all and (max-width: 735px) {
   .app{
     gap: 0px;
@@ -693,8 +672,8 @@ a:hover{
 @media all and (max-width: 420px){
 
   .right-side{
-    transform: scale(0.45);
-    margin: -250px 0;
+    transform: scale(0.55);
+    margin: -200px 0;
   }
   .form-segment{
     min-width: 250px;
@@ -703,9 +682,12 @@ a:hover{
     width: 180px;
   }
 }
-@media all and (max-width: 300px){
-  right-side{
-    transform: scale(0.45);
-    margin: -250px 0;
+/*Print css*/
+@keyframes slide-down{
+  0% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }

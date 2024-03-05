@@ -1,6 +1,6 @@
 
-import Pen from "./assets/pen.svg"
-import { useState, useRef } from "react"
+import Pen from "../assets/pen.svg";
+import { useState, useRef } from "react";
 import Modal from "./Modal";
 
 export default function Profile({props, pictureVisibility, accentColor}){

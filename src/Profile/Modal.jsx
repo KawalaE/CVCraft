@@ -1,4 +1,4 @@
-import "./styles.css"
+import "../styles.css"
 import ImageCroper from "./ImageCropper"
 import ReactDom from 'react-dom'
 

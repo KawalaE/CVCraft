@@ -1,9 +1,9 @@
 import './styles.css'
-import Profile from './Profile'
-import ContactResume from './ContactResume'
-import EducationResume from './EducationResume'
-import SkillsResume from './SkillsResume'
-import WorkResume from './WorkResume'
+import Profile from './Profile/Profile'
+import ContactResume from './Contact/ContactResume'
+import EducationResume from './Education/EducationResume'
+import SkillsResume from './Skills/SkillsResume'
+import WorkResume from './Work/WorkResume'
 
 export default function Resume({
     pictureVisibility,

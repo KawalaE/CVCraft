@@ -1,4 +1,4 @@
-import "./styles.css"
+import "../styles.css"
 import { useState } from "react";
 import { useRef } from "react";
 import 'react-image-crop/dist/ReactCrop.css';

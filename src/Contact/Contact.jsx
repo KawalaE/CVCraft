@@ -1,4 +1,4 @@
-import "./styles.css"
+import "../styles.css"
 import { useState } from "react"
 
 export default function Contact({props, inputChange, visibilityChange}){
