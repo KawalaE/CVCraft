@@ -1,4 +1,6 @@
 import "../styles.css"
+import ReactDOM from 'react-dom/client'
+import React from 'react';
 import { useState } from "react"
 
 export default function Contact({props, inputChange, visibilityChange}){

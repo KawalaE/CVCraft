@@ -1,3 +1,4 @@
+import React from 'react';
 import './styles.css'
 import Profile from './Profile/Profile'
 import ContactResume from './Contact/ContactResume'

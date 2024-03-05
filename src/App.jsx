@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client'
 import Education from "./Education/Education"
 import Contact from "./Contact/Contact"
 import Skills from "./Skills/Skills"

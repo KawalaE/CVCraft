@@ -1,4 +1,6 @@
 import "../styles.css"
+import React from 'react';
+import ReactDOM from 'react-dom/client'
 import ImageCroper from "./ImageCropper"
 import ReactDom from 'react-dom'
 

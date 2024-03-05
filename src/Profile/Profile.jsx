@@ -1,4 +1,5 @@
-
+import React from 'react';
+import ReactDOM from 'react-dom/client'
 import Pen from "../assets/pen.svg";
 import { useState, useRef } from "react";
 import Modal from "./Modal";
