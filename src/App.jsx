@@ -4,6 +4,7 @@ import Skills from "./Skills/Skills"
 import Work from "./Work/Work"
 import Resume from "./Resume"
 import Customize from "./Customize"
+import Footer from "./Footer"
 import "./styles.css"
 import { useState } from "react"
 import { useRef } from "react";
@@ -88,9 +89,9 @@ export default function App(){
         }
     }
     const [pictureVisibility, setPictureVisibility] = useState(true);
-    const [fullName, setFullName] = useState("Richard Sanchez");
+    const [fullName, setFullName] = useState("Full Name");
     const [nameVisibility, setNameVisibility] = useState(true);
-    const [position, setPosition] = useState("Marketing Manager");
+    const [position, setPosition] = useState("Current Position");
     const [positionVisibility, setPositionVisibility] = useState(true);
     const [phoneNumber, setphoneNumber] = useState("+123-456-7890");
     const [phoneVisibility, setPhoneVisibility] = useState(true);
@@ -255,7 +256,8 @@ export default function App(){
         }
     }
     return (
-        <div className="app">
+        <>
+            <div className="app">
             <div className="left-side">
                 <div className="top-page">
                     <p className="logo">CVCraft</p>
@@ -310,6 +312,10 @@ export default function App(){
             </div>
             
         </div>
+        <Footer/>
+
+        </>
+        
         
     )
 }

@@ -645,6 +645,28 @@ a:hover{
 .light-theme:hover, .dark-theme:hover{
   filter:brightness(0.5);
 }
+.footer{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.footer-name{
+  color: var(--logo-font);
+  font-weight: 500;
+}
+.github-footer-icon{
+  background:url('./assets/github-footer.svg');
+  background-size: 25px 25px;
+  height: 25px;  
+  width: 25px;
+  transition:.5s ease-in-out;
+}
+
+.github-footer-icon:hover{
+  transform: rotate(360deg) scale(1.1);
+}
 /*Responsivness css*/
 @media all and (max-width: 735px) {
   .app{
